@@ -29,7 +29,7 @@
                 	</li>
                 	
             	</ul>
-https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form
+<!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
             	
             	<span class="ml-auto navbar-nav">
             		<li class="nav-item dropdown">
@@ -52,11 +52,7 @@ https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form
 										<div class="form-group">
 											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
 										</div>
-										<div class="checkbox">
-											 <label>
-											 <input type="checkbox"> keep me logged-in
-											 </label>
-										</div>
+										
 								 </form>
             					</div>
             				</div>
