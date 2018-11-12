@@ -29,6 +29,8 @@
                 	</li>
                 	
             	</ul>
+https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form
+            	
             	<span class="ml-auto navbar-nav">
             		<li class="nav-item dropdown">
             			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
