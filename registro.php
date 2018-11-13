@@ -99,6 +99,35 @@
         	</div>
     	</div>
 	</nav>
+    <div class="container custom">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+    <div class="container registro">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Registro</h1>
+            </div>
+        </div>
+        <div class="row custom">
+            <div class="col-md-12">
+                <form method="POST" action="validadRegistro.php">
+                    Nombre<input type="text" name="nombre">
+                    <br>Constraseña<input type="password" name="pass">
+                    <br>Confirmar contraseña<input type="password" name="pass2">
+                    <div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label">Date</label>
+  <div class="col-10">
+    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+  </div>
+</div>
+                </form>
+            </div>
+        </div>
+    </div>
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>

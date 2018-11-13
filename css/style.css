@@ -81,3 +81,13 @@ only screen and (                min-resolution: 2dppx) {
         border-top:0 none;
     }
 }
+.container.registro{
+    text-align: center;
+    padding-top: 50px;
+    color: #fff;
+}
+.row.custom{
+    border: solid;
+    border-radius: 2px;
+    border-color: rgb(255,255,255);
+}
