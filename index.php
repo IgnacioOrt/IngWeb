@@ -115,14 +115,6 @@
                                 <img src="img/inicio3.jpg" alt>
                                 <figcaption>Utah, United States</figcaption>
                             </figure>
-                            <figure>
-                                <img src="bryce-canyon-utah.jpg" alt>
-                                <figcaption>Bryce Canyon, Utah, United States</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="hobbiton-lake.jpg" alt>
-                                <figcaption>Hobbiton, New Zealand</figcaption>
-                            </figure>
                         </figure>
                         </div>
 	<script src="dist/jquery/jquery.slim.min.js"></script>
