@@ -128,9 +128,6 @@ only screen and (                min-resolution: 2dppx) {
 	text-transform: none;
 	text-align: center;
 }
-<<<<<<< HEAD
-
-
 
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
 @keyframes slidy {
@@ -169,17 +166,4 @@ figure.slider figure figcaption {
   background: rgba(0,0,0,0.4);
   color: #fff; width: 100%;
   font-size: 2rem; padding: .6rem; 
-=======
-.col-izq{
-	border: solid;
-    border-radius: 2px;
-    border-color: rgba(255,255,255,0.8);
-    height: 80%;
-}
-@media screen and (max-width: 768px){
-	.col-izq h3{
-		padding-top: 10px;
-		font-size: 1rem;
-	}	
->>>>>>> 5be5d1f46f4a49fa1c4f05f988129b791eda680d
 }
