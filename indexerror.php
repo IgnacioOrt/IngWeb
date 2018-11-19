@@ -33,11 +33,11 @@
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
             	
             	<span class="ml-auto navbar-nav">
-            		<li class="nav-item dropdown">
+            		<li class="nav-item dropdown show">
             			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             				Iniciar sesión
             			</a>
-            			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="login-dp">
+            			<div class="dropdown-menu dropdown-menu-right show" aria-labelledby="navbarDropdown" id="login-dp">
             				<div class="row">
             					<div class="col-md-12">
             						<form class="form" role="form" method="post" action="validalogin.php" accept-charset="UTF-8" id="login-nav">
@@ -49,6 +49,7 @@
 											 <label class="sr-only" for="pass">Contraseña</label>
 											 <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña" required>
 										</div>
+                                        <span class="error">Usuario o contraseña incorrecto</span>
 										<div class="form-group">
 											 <button type="submit" class="btn btn-primary btn-block">Entrar</button>
 										</div>

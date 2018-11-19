@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    if (!isset($_SESSION['id_usuario'])) {
+        header("Location:index.php");
+    }
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -27,7 +32,12 @@
 	                <li class="nav-item">
                     	<a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
                 	</li>
-                	
+                	<li class="nav-item">
+                        <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="editarReceta.php">Editar receta</a>
+                    </li>
             	</ul>
 
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
@@ -35,31 +45,13 @@
             	<span class="ml-auto navbar-nav">
             		<li class="nav-item dropdown">
             			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            				Iniciar sesión
+            				<?php echo ($_SESSION['username']); ?>
             			</a>
-            			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="login-dp">
+            			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="login-dp-2">
             				<div class="row">
             					<div class="col-md-12">
-            						<form class="form" role="form" method="post" action="validalogin.php" accept-charset="UTF-8" id="login-nav">
-										<div class="form-group">
-											 <label class="sr-only" for="email">Correo electrónico</label>
-											 <input type="email" class="form-control" name="mail" id="email" placeholder="Correo electrónico" required>
-										</div>
-										<div class="form-group">
-											 <label class="sr-only" for="pass">Contraseña</label>
-											 <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña" required>
-										</div>
-										<div class="form-group">
-											 <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-										</div>
-								 </form>
-            					</div>
-            				</div>
-            				<div class="row">
-            					<div class="col-md-12">
-            						<div class="bottom text-center">
-            							¿Aún no estas registrado? <a href="registro.php"><b>Registrarse</b></a>
-            						</div>
+            						<a class="enlacesDrop" href="perfil.php">Mi perfil</a><br>
+                                    <a class="enlacesDrop" href="cerrarsesion.php">Cerrar sesión</a>
             					</div>
             				</div>
             			</div>
@@ -99,6 +91,9 @@
         	</div>
     	</div>
 	</nav>
+
+    
+
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>

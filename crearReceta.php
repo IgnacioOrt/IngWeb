@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    if (!isset($_SESSION['id_usuario'])) {
+        header("Location:index.php");
+    }
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -27,7 +32,12 @@
 	                <li class="nav-item">
                     	<a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
                 	</li>
-                	
+                	<li class="nav-item">
+                        <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="editarReceta.php">Editar receta</a>
+                    </li>
             	</ul>
 
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
@@ -35,31 +45,13 @@
             	<span class="ml-auto navbar-nav">
             		<li class="nav-item dropdown">
             			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            				Iniciar sesión
+            				<?php echo ($_SESSION['username']); ?>
             			</a>
-            			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="login-dp">
+            			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="login-dp-2">
             				<div class="row">
             					<div class="col-md-12">
-            						<form class="form" role="form" method="post" action="validalogin.php" accept-charset="UTF-8" id="login-nav">
-										<div class="form-group">
-											 <label class="sr-only" for="email">Correo electrónico</label>
-											 <input type="email" class="form-control" name="mail" id="email" placeholder="Correo electrónico" required>
-										</div>
-										<div class="form-group">
-											 <label class="sr-only" for="pass">Contraseña</label>
-											 <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña" required>
-										</div>
-										<div class="form-group">
-											 <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-										</div>
-								 </form>
-            					</div>
-            				</div>
-            				<div class="row">
-            					<div class="col-md-12">
-            						<div class="bottom text-center">
-            							¿Aún no estas registrado? <a href="registro.php"><b>Registrarse</b></a>
-            						</div>
+            						<a class="enlacesDrop" href="perfil.php">Mi perfil</a><br>
+                                    <a class="enlacesDrop" href="cerrarsesion.php">Cerrar sesión</a>
             					</div>
             				</div>
             			</div>
@@ -99,46 +91,38 @@
         	</div>
     	</div>
 	</nav>
-    <div class="container custom">
-        <div class="row">
-            <div class="col-md-12">
 
-            </div>
-        </div>
-    </div>
     <div class="container registro">
         <div class="row">
             <div class="col-md-12">
-                <h2>Registro</h2>
+                <h2 style="text-align: center;">Agrega tu receta</h2>
             </div>
         </div>
-        <div class="row custom justify-content-center">
+        <div class="row custom">
             <div class="col-md-12">
-                <form method="POST" action="validaRegistro.php" enctype="multipart/form-data">
-                	<div class="form-group">
-                		<label for="mail">Correo electrónico</label>
-                		<input type="email" class="form-control" name="mail" id="mail" aria-describedby="emailHelp" placeholder="Correo electrónico" required>
-                	</div>
-                	<div class="form-group">
-                		<label for="user">Usuario</label>
-                		<input type="text" class="form-control" name="user" id="user" placeholder="Nombre de usuario" required>
-                	</div>
-					<div class="form-group">
-                		<label for="name">Nombre completo</label>
-                		<input type="text" class="form-control" name="name" id="name" placeholder="Nombre completo" required>
-                	</div>
-                    <div class="form-group row">
-                    	<label for="pass1" class="col-sm-3 col-form-label">Contraseña</label>
-                    	<div class="col-sm-9">
-                    		<input type="password" class="form-control" name="pass1" id="pass1" placeholder="Contraseña" required>
-                    	</div>
-                    </div>
-                    <div class="form-group row">
-                    	<div class="col-sm-3"></div>
-                    	<div class="col-sm-9">
-                    		<input type="password" class="form-control" name="pass2" id="pass1" placeholder="Confirmar contraseña" required>
-                    	</div>
-                    </div>
+                <form method="POST" action="valida.php" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                <label for="ing1">Ingrediente</label>
+                                <input type="text" class="form-control" name="ingrediente[]" id="ing1" aria-describedby="emailHelp" placeholder="Nombre" required>
+                            </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                <label for="ing1">Gramaje</label>
+                                <input type="text" class="form-control" name="gramaje[]" id="ing1" placeholder="gramaje" required>
+                            </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="ing1">Unidad</label>
+                                    <input type="text" class="form-control" name="unidad[]" id="ing1" placeholder="Correo electrónico" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="demo"></div>
+                        <button class="btn" onclick="agregar()">+</button>
                     <button type="submit" class="btn btn-primary">Registrarse</button>
                 </form>
             </div>
@@ -147,5 +131,19 @@
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
+    <script type="text/javascript">
+        var num_ingredientes = 3;
+        function agregar() {
+            num_ingredientes = num_ingredientes + 1;
+            var ingrediente = "<div class='col-sm-4'> <div class='form-group'><input type='text' class='form-control' name='ingredientes[]' id='ing" + num_ingredientes +"' placeholder='Correo electrónico' required></div></div>";
+            console.log(ingrediente);
+            var gramaje = "<div class='col-sm-4'><div class='form-group'><label for='ing1'>Gramaje</label><input type='text' class='form-control' name='gramaje[]' id='ing1' placeholder='gramaje' required>                            </div>";
+            var unidad = "<div class='col-sm-4'><div class='form-group'><label for='ing1'>Unidad</label><input type='text' class='form-control' name='unidad[]' id='ing1' placeholder='Correo electrónico' required></div></div>";
+            document.getElementById("demo").innerHTML += ingrediente;
+        }
+        function eliminarIngrediente() {
+            
+        }
+    </script>
 </body>
 </html>

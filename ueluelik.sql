@@ -6,13 +6,13 @@ DROP TABLE IF EXISTS usuario;
 CREATE TABLE usuario(
 	id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nombre varchar(50) NOT NULL,
-	username varchar(15) NOT NULL,
-	correo varchar(30) NOT NULL,
+	username varchar(15) NOT NULL UNIQUE,
+	correo varchar(30) NOT NULL UNIQUE,
 	password varchar(100) NOT NULL,
-	tipo INT NOT NULL,
-	edad INT NOT NULL,
-	sexo varchar(10) NOT NULL,
-	pais varchar(20) NOT NULL
+	tipo INT NOT NULL
+	#edad INT NOT NULL,
+	#sexo varchar(10) NOT NULL,
+	#pais varchar(20) NOT NULL
 );
 
 DROP TABLE IF EXISTS receta;

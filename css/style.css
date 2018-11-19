@@ -62,6 +62,12 @@ only screen and (                min-resolution: 2dppx) {
     overflow:hidden;
     background-color:rgba(255,255,255,.8);
 }
+#login-dp-2{
+    padding: 15px;
+}
+.login-dp-2 a{
+	color: #000000;
+}
 #login-dp .bottom{
     background-color:rgba(255,255,255,.8);
     border-top:1px solid #ddd;
@@ -82,12 +88,29 @@ only screen and (                min-resolution: 2dppx) {
     }
 }
 .container.registro{
-    text-align: center;
-    padding-top: 50px;
+    padding-top: 100px;
     color: #fff;
 }
 .row.custom{
+	padding: 10px;
+	width: 50%;
+	margin:  0 auto;
     border: solid;
     border-radius: 2px;
-    border-color: rgb(255,255,255);
+    border-color: rgba(255,255,255,0.8);
+}
+@media screen and (max-width: 768px){
+	.row.custom{
+		width: 70%;
+	}	
+}
+.enlacesDrop{
+	color: #000000;
+	text-transform: none;
+}
+.error{
+	color: red;
+	font-size: 12px;
+	text-transform: none;
+	text-align: center;
 }
