@@ -115,6 +115,10 @@
                                 <img src="img/inicio3.jpg" alt>
                                 <figcaption>Utah, United States</figcaption>
                             </figure>
+                             <figure>
+                                <img src="img/banner.jpg" alt>
+                                <figcaption>Utah, United States</figcaption>
+                            </figure>
                         </figure>
                         </div>
 	<script src="dist/jquery/jquery.slim.min.js"></script>
