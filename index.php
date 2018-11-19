@@ -104,25 +104,25 @@
                     <div id="captioned-gallery">
                         <figure class="slider">
                             <figure>
-                                <img src="img/Inicio1.png" alt>
+                                <img src="img/inicio1.png" alt>
                                 <figcaption>Hobbiton, New Zealand</figcaption>
                             </figure>
-                        <figure>
-                                <img src="wanaka-drowned-tree.jpg" alt>
+                            <figure>
+                                <img src="img/inicio2.jpg" alt>
                                 <figcaption>Wanaka, New Zealand</figcaption>
-                        </figure>
-                        <figure>
-                                <img src="utah-peak.jpg" alt>
+                            </figure>
+                            <figure>
+                                <img src="img/inicio3.jpg" alt>
                                 <figcaption>Utah, United States</figcaption>
-                        </figure>
-                        <figure>
+                            </figure>
+                            <figure>
                                 <img src="bryce-canyon-utah.jpg" alt>
                                 <figcaption>Bryce Canyon, Utah, United States</figcaption>
-                        </figure>
-                        <figure>
+                            </figure>
+                            <figure>
                                 <img src="hobbiton-lake.jpg" alt>
                                 <figcaption>Hobbiton, New Zealand</figcaption>
-                        </figure>
+                            </figure>
                         </figure>
                         </div>
 	<script src="dist/jquery/jquery.slim.min.js"></script>
