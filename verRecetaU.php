@@ -99,7 +99,7 @@
             //$id_receta = $_GET['id_receta'];
 /*            <a href="eliminarProximoEvento.php?id_evento=<?php echo "$id_evento" ?>" class="waves-effect" onclick="return confirm('¿Esta seguro que desea eliminar?');"><i class="fa fa-times fa-fw" aria-hidden="true"></i><span class="hide-menu">Eliminar</span></a></td>
 */
-            $id_receta = 6;
+            $id_receta = 1;
             $base = new dbmysqli($hostname,$username,$password,$database);
             $query="SELECT* FROM receta WHERE id_receta = '$id_receta'";
             $result = $base->ExecuteQuery($query);
