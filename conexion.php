@@ -32,9 +32,9 @@
 			}
 			$datos = implode(", ",$dato);
 			//Insertamos los valores en cada campo
-			echo "INSERT INTO $tabla VALUES ($datos)";
+			echo "INSERT INTO $tabla ($campo) VALUES ($datos)";
 			var_dump($datos);
-			if($this->conexion->query("INSERT INTO $tabla VALUES ($datos)") === TRUE){
+			if($this->conexion->query("INSERT INTO $tabla ($campo) VALUES ($datos)") === TRUE){
 				echo "Nueva entrada agregada";
 			}else{
 				echo "Error al insertar los datos ".$this->conexion->error;
@@ -107,16 +107,6 @@
 						echo "Fallo no se pudo eliminar el registro".$this->conexion->error;
 				}
 			}
-		}
-		// funcion Buscar en una tabla
-		//$clientesbuscar = array("idcliente",”nombre”);
-		//$conectadb ->buscar($tabla, $clientesbuscar);
-
-		public function buscar($tabla, $campos){
-			$campos=implode(",",$campos);
-			echo "$campos";
-  			$resultado=$this->conexion->query("SELECT $campos FROM $tabla");
-  			return $resultado->fetch_all(MYSQLI_ASSOC);
 		}
 		public function GetRows($result){
 		//Metodo que retorna la ultima fila de un resultado en forma de arreglo.

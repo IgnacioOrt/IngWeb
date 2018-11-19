@@ -1,30 +1,58 @@
 <?php
 	session_start();
-	if ( !empty($_POST["ingrediente"]) && is_array($_POST["ingrediente"]) ) { 
-    echo "<ul>";
-    foreach ( $_POST["ingrediente"] as $ingrediente ) { 
-            echo "<li>";
-            echo $ingrediente; 
-            echo "</li>"; 
-     }
-     echo "</ul>";
+	$id_usuario = $_SESSION['id_usuario'];
+	echo "$id_usuario";
+	require_once 'config.php';
+	require_once 'conexion.php';
+	$base = new dbmysqli($hostname,$username,$password,$database);
+
+	if (isset($_POST['nombre'])){
+		echo ($_POST['nombre']);
+		$nombre = $_POST['nombre'];
 	}
-	if ( !empty($_POST["gramaje"]) && is_array($_POST["gramaje"]) ) { 
-    echo "<ul>";
-    foreach ( $_POST["gramaje"] as $gramaje ) { 
-            echo "<li>";
-            echo $gramaje; 
-            echo "</li>"; 
-     }
-     echo "</ul>";
+	if (isset($_POST['preparacion'])) {
+		echo ($_POST['preparacion']);
+		$preparacion = $_POST['preparacion'];
 	}
-	if ( !empty($_POST["unidad"]) && is_array($_POST["unidad"]) ) { 
-    echo "<ul>";
-    foreach ( $_POST["unidad"] as $unidad ) { 
-            echo "<li>";
-            echo $unidad; 
-            echo "</li>"; 
-     }
-     echo "</ul>";
+	if (isset($_POST['comment'])) {
+		echo ($_POST['comment']);
+		$comment = $_POST['comment'];
 	}
+	$receta = array("id_usuario" => "$id_usuario", "nombre" => "$nombre", "preparacion" => "$preparacion", "comentario" => "$comment");
+	var_dump($receta);
+	$base->insertar("receta",$receta);
+	$query="SELECT LAST_INSERT_ID()";
+	$result = $base->ExecuteQuery($query);
+	if($result){
+		if ($row=$base->GetRows($result)){
+				echo($row[0]);
+				$id_receta = $row[0];
+				//header("Location:indexU.php");
+		}
+		$base->SetFreeResult($result);
+	}else{
+		echo "<h3>Error generando la consulta</h3>";
+	}
+	
+	//$base -> insertar("receta",$receta);
+	if ( !empty($_POST["ingrediente"]) && is_array($_POST["ingrediente"]) ) {
+		foreach ( $_POST["ingrediente"] as $ingrediente ) {
+			$ingredientes[] = $ingrediente;
+		}
+	}
+	if ( !empty($_POST["gramaje"]) && is_array($_POST["gramaje"]) ) {
+		foreach ( $_POST["gramaje"] as $gramaje ) { 
+			$gramajes[] = $gramaje;
+		}
+	}
+	if ( !empty($_POST["unidad"]) && is_array($_POST["unidad"]) ) {
+		foreach ( $_POST["unidad"] as $unidad ) {
+			$unidades[] = $unidad;
+		}
+	}
+	for ($i=0; $i < count($ingredientes); $i++) {
+		$insert = array("id_receta" => "$id_receta", "nombre" => "$ingredientes[$i]","cantidad" => "$gramajes[$i] "."$unidades[$i]" );
+		$base->insertar("ingrediente",$insert);
+	}
+	$base -> CloseConnection();
 ?>

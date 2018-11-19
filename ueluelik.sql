@@ -19,6 +19,7 @@ DROP TABLE IF EXISTS receta;
 CREATE TABLE receta(
 	id_receta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	id_usuario INT NOT NULL,
+	nombre TEXT NOT NULL,
 	preparacion TEXT NOT NULL,
 	comentario TEXT NOT NULL,
 	FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario)

@@ -19,7 +19,6 @@
 	$usuario = array("nombre"=>"$nombre", "username"=> "$usuario", "correo"=>"$mail" , "password"=> "$password", "tipo" => 1);
 	$base -> insertaUsuario("usuario",$usuario);
 	$_SESSION['username']=$usuario;
-	$usuariobuscar = array("correo","$mail");
 	$query="SELECT* FROM usuario WHERE correo = '$mail'";
 	$result = $base->ExecuteQuery($query);
 	if($result){

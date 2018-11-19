@@ -128,13 +128,14 @@
                                     <select class='custom-select' name='unidad[]' required>
                                         <option value=''>Seleccione una unidad</option>
                                         <option value='Pizca'>Pizca</option>
+                                        <option value='Pieza'>Pieza</option>
                                         <option value='Cucharada'>Cucharada</option>
                                         <option value='Onza'>Onza</option>
                                         <option value='Taza'>Taza</option>
                                         <option value='Litro'>Litro</option>
                                         <option value='Gramos'>Gramos</option>
                                         <option value='Libras'>Libras</option>
-                                        <option value='Libras'>Libras</option>
+                                        <option value='Kilo'>Kilo</option>
                                         <option value='Al gusto'>Al gusto</option>
                                     </select>
                                 </div>
@@ -160,13 +161,14 @@
                                     <select class='custom-select' name='unidad[]' required>
                                         <option value=''>Seleccione una unidad</option>
                                         <option value='Pizca'>Pizca</option>
+                                        <option value='Pieza'>Pieza</option>
                                         <option value='Cucharada'>Cucharada</option>
                                         <option value='Onza'>Onza</option>
                                         <option value='Taza'>Taza</option>
                                         <option value='Litro'>Litro</option>
                                         <option value='Gramos'>Gramos</option>
                                         <option value='Libras'>Libras</option>
-                                        <option value='Libras'>Libras</option>
+                                        <option value='Kilo'>Kilo</option>
                                         <option value='Al gusto'>Al gusto</option>
                                     </select>
                                 </div>
@@ -188,13 +190,15 @@
                                     <select class='custom-select' name='unidad[]' required>
                                         <option value=''>Seleccione una unidad</option>
                                         <option value='Pizca'>Pizca</option>
+                                        <option value='Pieza'>Pieza</option>
                                         <option value='Cucharada'>Cucharada</option>
                                         <option value='Onza'>Onza</option>
                                         <option value='Taza'>Taza</option>
                                         <option value='Litro'>Litro</option>
                                         <option value='Gramos'>Gramos</option>
                                         <option value='Libras'>Libras</option>
-                                        <option value='Libras'>Libras</option>
+                                        <option value='Kilo'>Kilo</option>
+                                        <option value='Paquete'>Paquete</option>
                                         <option value='Al gusto'>Al gusto</option>
                                     </select>
                                 </div>
@@ -214,7 +218,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="comment">Comentario</label>
-                                    <textarea class="form-control" rows="5" name="comment" id="comment"></textarea>
+                                    <textarea class="form-control" rows="5" name="comment" id="comment" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +241,7 @@
             }
             var ingrediente = "<div class='row' id='"+num_ingredientes+"'><div class='col-sm-4'><div class='form-group'><input type='text' class='form-control' name='ingrediente[]' placeholder='Nombre' required></div></div>";
             var gramaje = "<div class='col-sm-3'><div class='form-group'><input type='text' class='form-control' name='gramaje[]' placeholder='Gramaje' required></div></div>";
-            var unidad = "<div class='col-sm-3'><div class='form-group'><select class='custom-select' name='unidad[]' required><option value=''>Seleccione una unidad</option><option value='Pizca'>Pizca</option><option value='Cucharada'>Cucharada</option><option value='Onza'>Onza</option><option value='Taza'>Taza</option><option value='Litro'>Litro</option><option value='Gramos'>Gramos</option><option value='Libras'>Libras</option><option value='Libras'>Libras</option><option value='Al gusto'>Al gusto</option></select></div></div>";
+            var unidad = "<div class='col-sm-3'><div class='form-group'><select class='custom-select' name='unidad[]' required><option value=''>Seleccione una unidad</option><option value='Pizca'>Pizca</option><option value='Pieza'>Pieza</option><option value='Cucharada'>Cucharada</option><option value='Onza'>Onza</option><option value='Taza'>Taza</option><option value='Litro'>Litro</option><option value='Gramos'>Gramos</option><option value='Libras'>Libras</option><option value='Libras'>Libras</option><option value='Kilo'>Kilo</option><option value='Al gusto'>Al gusto</option></select></div></div>";
             var eliminar = "<div class='col-sm-2 text-center'><button class='btn' onclick='eliminarIngrediente("+num_ingredientes+")'>x</button></div>";
 
                             
