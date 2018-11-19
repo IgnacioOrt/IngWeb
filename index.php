@@ -104,7 +104,7 @@
                     <div id="captioned-gallery">
                         <figure class="slider">
                             <figure>
-                                <img src="img/inicio1.jpg" alt>
+                                <img src="img/inicio1.jpg" >
                                 <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura</figcaption>
                             </figure>
                             <figure>
