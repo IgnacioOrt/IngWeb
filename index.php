@@ -105,7 +105,7 @@
                         <figure class="slider">
                             <figure>
                                 <img src="img/inicio1.jpg" alt>
-                                <figcaption>Hobbiton, New Zealand</figcaption>
+                                <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura</figcaption>
                             </figure>
                             <figure>
                                 <img src="img/inicio2.jpg" alt>
