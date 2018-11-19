@@ -9,13 +9,12 @@
             $base = new dbmysqli($hostname,$username,$password,$database);
             
             $sql = "SELECT * FROM ingrediente WHERE nombre LIKE '%".$b."%'";
-            echo "$sql";
             $result = $base->ExecuteQuery($sql);
             if($result){
                   while ($row=$base->GetRows($result)){
-                        $nombre = $row['0'];
+                        $nombre = $row['2'];
                         $id = $row['1'];
-                        echo $id." - ".$nombre."<br><br>";
+                        echo "$nombre<br>";
                   }
                   $base->SetFreeResult($result);
             }else{
