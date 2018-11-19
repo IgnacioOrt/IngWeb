@@ -91,6 +91,14 @@ only screen and (                min-resolution: 2dppx) {
     padding-top: 100px;
     color: #fff;
 }
+.row.ingredientes{
+	padding: 10px;
+	width: 90%;
+	margin:  0 auto;
+    border: solid;
+    border-radius: 2px;
+    border-color: rgba(255,255,255,0.8);
+}
 .row.custom{
 	padding: 10px;
 	width: 50%;
@@ -102,7 +110,13 @@ only screen and (                min-resolution: 2dppx) {
 @media screen and (max-width: 768px){
 	.row.custom{
 		width: 70%;
-	}	
+	}
+	.row.ingredientes{
+		width: 90%;
+	}
+}
+.quitar-ingrediente{
+	font-size: 14px;
 }
 .enlacesDrop{
 	color: #000000;

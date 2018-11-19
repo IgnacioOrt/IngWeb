@@ -98,32 +98,127 @@
                 <h2 style="text-align: center;">Agrega tu receta</h2>
             </div>
         </div>
-        <div class="row custom">
+        <div class="row ingredientes">
             <div class="col-md-12">
-                <form method="POST" action="valida.php" enctype="multipart/form-data">
+                <form method="POST" action="validaReceta.php" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre de la receta</label>
+                                    <input type="text" class="form-control" name="nombre" id="nombre"placeholder="Nombre" required>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                <label for="ing1">Ingrediente</label>
-                                <input type="text" class="form-control" name="ingrediente[]" id="ing1" aria-describedby="emailHelp" placeholder="Nombre" required>
+                                    <label for="ing1">Ingrediente</label>
+                                    <input type="text" class="form-control" name="ingrediente[]" id="ing1"placeholder="Nombre" required>
+                                </div>
                             </div>
-                            </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <div class="form-group">
-                                <label for="ing1">Gramaje</label>
-                                <input type="text" class="form-control" name="gramaje[]" id="ing1" placeholder="gramaje" required>
+                                    <label for="ing1">Gramaje</label>
+                                    <input type="text" class="form-control" name="gramaje[]" id="ing1" placeholder="Gramaje">
+                                </div>
                             </div>
-                            </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="ing1">Unidad</label>
-                                    <input type="text" class="form-control" name="unidad[]" id="ing1" placeholder="Correo electrónico" required>
+                                    <select class='custom-select' name='unidad[]' required>
+                                        <option value=''>Seleccione una unidad</option>
+                                        <option value='Pizca'>Pizca</option>
+                                        <option value='Cucharada'>Cucharada</option>
+                                        <option value='Onza'>Onza</option>
+                                        <option value='Taza'>Taza</option>
+                                        <option value='Litro'>Litro</option>
+                                        <option value='Gramos'>Gramos</option>
+                                        <option value='Libras'>Libras</option>
+                                        <option value='Libras'>Libras</option>
+                                        <option value='Al gusto'>Al gusto</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <label class="quitar-ingrediente">Quitar ingrediente</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                <input type="text" class="form-control" name="ingrediente[]" placeholder="Nombre" required>
+                            </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                <input type="text" class="form-control" name="gramaje[]" placeholder="Gramaje">
+                            </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class='custom-select' name='unidad[]' required>
+                                        <option value=''>Seleccione una unidad</option>
+                                        <option value='Pizca'>Pizca</option>
+                                        <option value='Cucharada'>Cucharada</option>
+                                        <option value='Onza'>Onza</option>
+                                        <option value='Taza'>Taza</option>
+                                        <option value='Litro'>Litro</option>
+                                        <option value='Gramos'>Gramos</option>
+                                        <option value='Libras'>Libras</option>
+                                        <option value='Libras'>Libras</option>
+                                        <option value='Al gusto'>Al gusto</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                <input type="text" class="form-control" name="ingrediente[]" placeholder="Nombre" required>
+                            </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                <input type="text" class="form-control" name="gramaje[]" placeholder="Gramaje">
+                            </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class='custom-select' name='unidad[]' required>
+                                        <option value=''>Seleccione una unidad</option>
+                                        <option value='Pizca'>Pizca</option>
+                                        <option value='Cucharada'>Cucharada</option>
+                                        <option value='Onza'>Onza</option>
+                                        <option value='Taza'>Taza</option>
+                                        <option value='Litro'>Litro</option>
+                                        <option value='Gramos'>Gramos</option>
+                                        <option value='Libras'>Libras</option>
+                                        <option value='Libras'>Libras</option>
+                                        <option value='Al gusto'>Al gusto</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div id="demo"></div>
-                        <button class="btn" onclick="agregar()">+</button>
-                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                        <button class="btn" onclick="agregar()">+</button> Añadir ingrediente<br>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="comment">Preparación</label>
+                                    <textarea class="form-control" rows="5" name="preparacion" id="comment" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="comment">Comentario</label>
+                                    <textarea class="form-control" rows="5" name="comment" id="comment"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    <br><button type="submit" class="btn btn-primary">Añadir receta</button>
                 </form>
             </div>
         </div>
@@ -132,17 +227,27 @@
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
     <script type="text/javascript">
-        var num_ingredientes = 3;
+        var num_ingredientes = 0;
         function agregar() {
             num_ingredientes = num_ingredientes + 1;
-            var ingrediente = "<div class='col-sm-4'> <div class='form-group'><input type='text' class='form-control' name='ingredientes[]' id='ing" + num_ingredientes +"' placeholder='Correo electrónico' required></div></div>";
-            console.log(ingrediente);
-            var gramaje = "<div class='col-sm-4'><div class='form-group'><label for='ing1'>Gramaje</label><input type='text' class='form-control' name='gramaje[]' id='ing1' placeholder='gramaje' required>                            </div>";
-            var unidad = "<div class='col-sm-4'><div class='form-group'><label for='ing1'>Unidad</label><input type='text' class='form-control' name='unidad[]' id='ing1' placeholder='Correo electrónico' required></div></div>";
-            document.getElementById("demo").innerHTML += ingrediente;
+            if (num_ingredientes > 0) {
+                for (var i = 1; i < num_ingredientes; i++) {
+                    console.log(document.getElementById("demo"));
+                }
+            }
+            var ingrediente = "<div class='row' id='"+num_ingredientes+"'><div class='col-sm-4'><div class='form-group'><input type='text' class='form-control' name='ingrediente[]' placeholder='Nombre' required></div></div>";
+            var gramaje = "<div class='col-sm-3'><div class='form-group'><input type='text' class='form-control' name='gramaje[]' placeholder='Gramaje' required></div></div>";
+            var unidad = "<div class='col-sm-3'><div class='form-group'><select class='custom-select' name='unidad[]' required><option value=''>Seleccione una unidad</option><option value='Pizca'>Pizca</option><option value='Cucharada'>Cucharada</option><option value='Onza'>Onza</option><option value='Taza'>Taza</option><option value='Litro'>Litro</option><option value='Gramos'>Gramos</option><option value='Libras'>Libras</option><option value='Libras'>Libras</option><option value='Al gusto'>Al gusto</option></select></div></div>";
+            var eliminar = "<div class='col-sm-2 text-center'><button class='btn' onclick='eliminarIngrediente("+num_ingredientes+")'>x</button></div>";
+
+                            
+            //console.log(ingrediente + "" + gramaje + "" + unidad + eliminar);
+            document.getElementById("demo").innerHTML += ingrediente + "" + gramaje + "" + unidad + "" + eliminar;
         }
-        function eliminarIngrediente() {
-            
+
+        function eliminarIngrediente(id) {
+            document.getElementById(id).remove();
+            num_ingredientes--;
         }
     </script>
 </body>
