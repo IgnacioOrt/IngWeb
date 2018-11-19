@@ -94,8 +94,19 @@
 
     <div class="container registro">
         <div class="row">
-            <div class="col-md-3">
-                ingredientes
+            <div class="col-md-3 col-izq">
+                <?php
+                    require_once 'config.php';
+                    require_once 'conexion.php';
+                    $base = new dbmysqli($hostname,$username,$password,$database);
+
+                ?>
+                <h3>Ingredientes</h3>
+                <div class="form-group">
+                    <label for="nombre"></label>
+                    <input type="text" class="form-control" id="busqueda" placeholder="Nombre" required>
+                </div>
+                <div id="resultado"></div>
             </div>
             <div class="col-md-9">
                 mesa
@@ -103,8 +114,41 @@
         </div>
     </div>
 
-	<script src="dist/jquery/jquery.slim.min.js"></script>
+	<!--<script src="dist/jquery/jquery.slim.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        var consulta;
+        //hacemos focus al campo de búsqueda
+        $("#busqueda").focus();
+                                                                                                     
+        //comprobamos si se pulsa una tecla
+        $("#busqueda").keyup(function(e){
+                                      
+              //obtenemos el texto introducido en el campo de búsqueda
+              consulta = $("#busqueda").val();
+              //hace la búsqueda                                                                                  
+              $.ajax({
+                    type: "POST",
+                    url: "buscar.php",
+                    data: "b="+consulta,
+                    dataType: "html",
+                    beforeSend: function(){
+                    //imagen de carga
+                    $("#resultado").html("<p align='center'><img src='ajax-loader.gif' /></p>");
+                    },
+                    error: function(){
+                    alert("error petición ajax");
+                    },
+                    success: function(data){                                                    
+                    $("#resultado").empty();
+                    $("#resultado").append(data);                                                             
+                    }
+              });                                                                         
+        });                                                     
+});
+    </script>
 </body>
 </html>
