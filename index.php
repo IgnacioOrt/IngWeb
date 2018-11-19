@@ -104,7 +104,7 @@
                     <div id="captioned-gallery">
                         <figure class="slider">
                             <figure>
-                                <img src="img/inicio1.png" alt>
+                                <img src="img/inicio1.jpg" alt>
                                 <figcaption>Hobbiton, New Zealand</figcaption>
                             </figure>
                             <figure>
