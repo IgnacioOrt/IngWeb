@@ -160,6 +160,10 @@ body, html {
 
     <div class="bg-image img1"></div>
 
+    <footer>
+       <a href="https://www.facebook.com/Uel-Uelik-766160330391350/?modal=admin_todo_tour" target="_blank"><center><img  alt="siguenos en facebook" align="middle" height="40" src="http://3.bp.blogspot.com/-MQuocq7OzfU/UiXwUY81yQI/AAAAAAAAB0Q/h6-R_R2-buI/s1600/face.png" title="siguenos en facebook" width="40" /></center></a>
+   </footer>
+
 
 
     <script src="dist/jquery/jquery.slim.min.js"></script>
