@@ -152,12 +152,14 @@ body, html {
 	</nav>
     <br><br/>
     <br><br/>
-                <div class="bg-image img1"></div>
 
     <h1 align="center" style="color:white;">¿Quiénes Somos?</h1>
-    <img alt="team" align="right" src="img/team.png" width="400" height="300" /> 
-    <p align="center" style="color: white;"> Uel Uelik es un proyecto de cultura culinaria cargado de ilusión que crece dia a dia gracias a nuestros usuarios y visitantes.</p>
-    <p>Lorem ipsum dolor sit
+
+    <!--<img alt="team" align="right" src="img/team.png" width="400" height="300" /> -->
+    <p align="center" style="color: white;"> <br>Uel Uelik es un proyecto de cultura culinaria cargado de ilusión que crece dia a dia gracias a nuestros usuarios y visitantes. </p> <p align="center" style="color: white;">Uel Uelik obtiene su nombre a partir del idioma Náhuatl, teniendo como significado: "Demasiado Delicioso"</p>
+
+    <div class="bg-image img1"></div>
+
 
 
     <script src="dist/jquery/jquery.slim.min.js"></script>
