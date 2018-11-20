@@ -5,9 +5,13 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Uel Uelik</title>
 	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
+
+
 <body>
 	<!-- Top menu -->
 	<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
@@ -100,8 +104,10 @@
     	</div>
 	</nav>
 
-                
+                <!--
                     <div id="captioned-gallery">
+                        <div class="arrows prev"></div>
+
                         <figure class="slider">
                             <figure>
                                 <img src="img/inicio1.jpg" >
@@ -119,11 +125,60 @@
                                 <img src="img/inicio4.png" alt>
                                 <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
                             </figure>
-                        </figure>
-                        </div>
+                            <figure>
+                                <img src="img/inicio5.png" alt>
+                                <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="img/inicio6.png" alt>
+                                <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
+                            </figure>
+                            </figure>
+                            <div class="arrows next"></div>
+                        </div> -->
+
+
+    
+
+<div class="w3-content" style="max-width:1200px">
+    <div id="captioned-gallery">
+            <figure class="slider">
+       
+                <figure>
+                    <img class="mySlides" src="img/inicio1.jpg" style="width:100%">
+                    <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura (ITA) </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="mySlides" src="img/inicio2.jpg" style="width:100%">
+                    <figcaption>Chile en Nogada (MEX) </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="mySlides" src="img/inicio3.jpg" style="width:100%">
+                    <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="mySlides" src="img/inicio4.jpg" style="width:100%">
+                    <figcaption>Siete Fuegos - Francis Mallmann (ARG) </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="mySlides" src="img/inicio5.jpg" style="width:100%">
+                    <figcaption>Bola de Nieve de Mango - Gaggan Anand (IND) </figcaption>
+                </figure>
+            </figure>
+    </div>
+
+</div>
+
+
 
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
+
+
 </body>
 </html>

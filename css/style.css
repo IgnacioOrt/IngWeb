@@ -183,14 +183,16 @@ only screen and (                min-resolution: 2dppx) {
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
 @keyframes slidy {
 0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
+15% { left: 0%; } 
+20% { left: -100%; }
+30% { left: -100%; }
+35% { left: -200%; }
+45% { left: -200%; }
+50% { left: -300%; }
+60% { left: -300%; }
+65% { left: -400%; }
+70% { left: -400%; }
+100% { left: 0%; }
 }
 * {
   box-sizing: border-box;
@@ -204,7 +206,7 @@ div#captioned-gallery {
 }
 figure.slider { 
   position: relative; width: 500%;
-  font-size: 0; animation: 10s slidy infinite; 
+  font-size: 0; animation: 20s slidy infinite; 
 }
 figure.slider figure { 
   width: 20%; height: auto;
@@ -217,3 +219,8 @@ figure.slider figure figcaption {
   color: #fff; width: 100%;
   font-size: 2rem; padding: .6rem; 
 }
+
+
+
+
+--------------------
