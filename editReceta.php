@@ -200,7 +200,7 @@ body, html {
                                         </div>
                                     </div>
                                     <div class="col-sm-2">
-                                        
+                                        <div class='col-sm-2 text-center'><button class='btn' onclick='eliminarIngrediente("+num_ingredientes+")'>x</button></div>
                                     </div>
                                 </div>
                                 <?php
