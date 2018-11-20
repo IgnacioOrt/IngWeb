@@ -18,10 +18,15 @@
 			{
 				$_SESSION['username']=$row[2];
 				$_SESSION['id_usuario']=$row[0];
+				var_dump($row);
+				$_SESSION['tipo']=$row[5];
+				//SI TIPO ES 1 ES USUARIO NORMAL 
+				//Si es 2 es administrador
 				echo ("<br>".$_SESSION['username']);
 				echo ("<br>".$_SESSION['id_usuario']);
+				echo ("<br>".$_SESSION['tipo']);
 				echo "Las contraseñas coinciden";
-				header("Location:indexU.php");
+				//header("Location:indexU.php");
 			}
 			else
 			{

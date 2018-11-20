@@ -102,13 +102,13 @@
 
                 ?>
                 <h3>Ingredientes</h3>
+                <span class="msg-ayuda">Da click sobre los ingredientes que quieres agregar</span>
                 <div class="form-group">
                     <label for="nombre"></label>
                     <input type="text" class="form-control" id="busqueda" placeholder="Nombre" required>
                 </div>
                 <div id="resultado"></div>
-                <ol class="simple_with_animation list-group text-ingredientes scroll1">
-                    <li class="list-group-item">Another</li>
+                <ul class="list-group text-ingredientes scroll1">
                 <?php
                     $consulta = "SELECT DISTINCT nombre FROM ingrediente";
                     $result = $base->ExecuteQuery($consulta);
@@ -125,7 +125,7 @@
                     }
                     $base -> CloseConnection();
                 ?>
-                </ol>
+                </ul>
             </div>
             <div class="col-md-9 col-der">
                 <div class="row">
@@ -135,10 +135,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Arrastra tus ingredientes aquí</h3>
-                        <ol class='simple_with_animation list-group text-ingredientes scroll1'>
-                            <li class="list-group-item"></li>
-                        </ol>
+                        <div id="ingredientes"></div>
                     </div>
                 </div>
                 <div class="fondo"><a href="#" class="btn btn-primary">Buscar receta</a></div>
@@ -149,7 +146,6 @@
 	<script src="dist/jquery/jquery.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
-    <script src="js/jquery-sortable.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             var consulta;
@@ -174,44 +170,10 @@
             });                                                     
 });
     </script>
-    
-    <script type="text/javascript">
-        var adjustment;
-        $("ol.simple_with_animation").sortable({
-            group: 'simple_with_animation',
-            pullPlaceholder: false,
-            // animation on drop
-            onDrop: function  ($item, container, _super) {
-                var $clonedItem = $('<li/>').css({height: 0});
-                $item.before($clonedItem);
-                $clonedItem.animate({'height': $item.height()});
-
-                $item.animate($clonedItem.position(), function  () {
-                    $clonedItem.detach();
-                    _super($item, container);
-                });
-            },
-            // set $item relative to cursor position
-            onDragStart: function ($item, container, _super) {
-                var offset = $item.offset(),
-                pointer = container.rootGroup.pointer;
-                adjustment = {
-                    left: pointer.left - offset.left,
-                    top: pointer.top - offset.top
-                };
-                _super($item, container);
-            },
-            onDrag: function ($item, position) {
-                $item.css({
-                    left: position.left - adjustment.left,
-                    top: position.top - adjustment.top
-                });
-            }
-        });
-    </script>
     <script type="text/javascript">
         function agregar(nombre){
-            
+            var ingrediente = "nombre";
+            document.getElementById("ingredientes").innerHTML += ingrediente;
             console.log(nombre);
         }
         function quitar(nombre) {
