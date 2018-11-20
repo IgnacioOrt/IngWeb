@@ -57,44 +57,60 @@
             			</div>
             		</li>
             	</span>
-            	<!-- <ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text">Already have an account?</p></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-			<ul id="login-dp" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-								Iniciar sesión
-								<form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-    										<div class="form-group">
-    											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-    										</div>
-    										<div class="form-group">
-    											 <label class="sr-only" for="exampleInputPassword2">Password</label>
-    											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-    										</div>
-    										<div class="form-group">
-    											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-    										</div>
-    								 </form>
-							</div>
-							<div class="bottom text-center">
-								New here ? <a href="#"><b>Join Us</b></a>
-							</div>
-					 </div>
-				</li>
-			</ul>
-        </li>
-      </ul> -->
         	</div>
     	</div>
 	</nav>
 
     <div class="container registro">
         <div class="row">
-            
+            <div class="col-md-12">
+                <h3>Recetas</h3>
+                    <?php
+                        require_once 'config.php';
+                        require_once 'conexion.php';
+                        $base = new dbmysqli($hostname,$username,$password,$database);
+                    $consulta = "SELECT DISTINCT id_receta FROM ingrediente where ";
+                    var_dump($_POST['ids']);
+                    if ( !empty($_POST["ids"]) && is_array($_POST["ids"]) ) {
+                        foreach ( $_POST["ids"] as $ids ) {
+                            $id[] = $ids;
+                        }
+                    }
+                    for ($i=0; $i < count($id); $i++) { 
+                        if ($i == count($id) - 1) {
+                            $consulta = $consulta." nombre = '".$id[$i]."'";
+                        }else{
+                            $consulta = $consulta." nombre = '".$id[$i]."' or ";
+                        }
+                    }
+                    $result = $base->ExecuteQuery($consulta);
+                    if($result){
+                        while ($row=$base->GetRows($result)){
+                            $consulta2 = "SELECT nombre,id_receta FROM receta WHERE id_receta = '$row[0]'";
+                            echo "$consulta2";
+                            $result2 = $base->ExecuteQuery($consulta2);
+                            if($result2){
+                                if ($row=$base->GetRows($result2)){
+                                    $nombre = $row['0'];
+                                    ?>
+                                    <a href="verRecetaU.php?id_receta=<?php echo ($row['1']) ?>"><?php echo ($row['0']) ?></a>
+                                    <?php
+                                }
+                                $base->SetFreeResult($result2);
+                            }else{
+                                echo "<h3>Error generando la consulta</h3>";
+                            }
+                        }
+                        $base->SetFreeResult($result);
+                    }else{
+                        echo "<h3>Error generando la consulta</h3>";
+                    }
+                    
+
+                    
+                    $base -> CloseConnection();
+                ?>
+            </div>
         </div>
     </div>
 
