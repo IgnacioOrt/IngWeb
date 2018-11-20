@@ -13,13 +13,58 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 
-    
+        <style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Images used */
+.img1 { background-image: url("img/CaminataEnElBosque-DominiqueCrenn.png"); } 
+.img2 { background-image: url("img/MoleMadre-EnriqueOlvera.png"); }
+.img3 { background-image: url("img/ArrozNegroYLechedeNueces-AlexAtala.png"); } 
+.img4 { background-image: url("img/PescaCercana-Virgilio.png"); } 
+
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+  border: 10px solid #f1f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 1500px;
+  padding: 20px;
+  text-align: center;
+}
+</style>
 </head>
 <body>
 	<!-- Top menu -->
 	<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
     	<div class="container">
-	        <a class="navbar-brand" href="index.php">UEL UELIK</a>
+	        <a class="navbar-brand" href="indexAdmin.php">UEL UELIK</a>
         	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	            <span class="navbar-toggler-icon"></span>
         	</button>
@@ -60,8 +105,12 @@
 
     
     <div class="bg-image img1"></div>
+    <div class="bg-image img2"></div>
+    <div class="bg-image img3"></div>
+    <div class="bg-image img4"></div>
 
-    <div class="bg-text">Hola! </div>
+    <div class="bg-text">Hola! <br><?php echo ($_SESSION['username']); ?></div>
+
 
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>

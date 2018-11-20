@@ -30,7 +30,7 @@
 				{
 					header("Location:indexAdmin.php");
 				}
-				if($row[5]==0)
+				if($row[5]==1)
 				{
 					header("Location:indexU.php");
 				}
