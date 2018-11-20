@@ -20,7 +20,7 @@ body, html {
 
 .bg-image {
   /* Full height */
-  height: 120%; 
+  height: 100%; 
   
   /* Center and scale the image nicely */
   background-position: center;
@@ -168,6 +168,7 @@ body, html {
                 </div>
                 <form action="receta.php" method="POST">
                     <div id="id"></div>
+                    <div class="fondo text-center" id="msg-agregamas"></div>
                     <div class="fondo text-center"><button type="submit" class="btn btn-primary" onclick="enviar()" id="btnsend">Buscar receta</button></div>
                 </form>
             </div>
@@ -206,6 +207,7 @@ body, html {
         var ingredientes = [];
         if (ingredientes.length<3) {
             document.getElementById("btnsend").disabled = true;
+            document.getElementById("msg-agregamas").innerHTML = "Debes agregar al menos 3 ingredientes";
         }else{
             document.getElementById("btnsend").disabled = false;
         }
@@ -223,8 +225,10 @@ body, html {
                 console.log(nombre);
                 if (ingredientes.length<3) {
                     document.getElementById("btnsend").disabled = true;
+                    document.getElementById("msg-agregamas").innerHTML = "Debes agregar al menos 3 ingredientes";
                 }else{
                    document.getElementById("btnsend").disabled = false;
+                   document.getElementById("msg-agregamas").innerHTML = "";
                 }
             }
         }
@@ -241,8 +245,10 @@ body, html {
             document.getElementById("agregarIngrediente").innerHTML += ingrediente;
             if (ingredientes.length<3) {
                 document.getElementById("btnsend").disabled = true;
+                document.getElementById("msg-agregamas").innerHTML = "Debes agregar al menos 3 ingredientes";
             }else{
                 document.getElementById("btnsend").disabled = false;
+                document.getElementById("msg-agregamas").innerHTML = "";
             }
             console.log("Elemento eliminado");
         }

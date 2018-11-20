@@ -123,7 +123,7 @@ body, html {
                                     <textarea class="form-control" rows="3" name="descripcion" required></textarea>
                                 </div>
                                 <br>
-                                <input type="submit" name="enviar" value="Agregar noticia">
+                                <input class="btn btn-primary" type="submit" name="enviar" value="Agregar noticia">
                             </form>
                             <?php
                             if (isset($_POST['enviar'])) {

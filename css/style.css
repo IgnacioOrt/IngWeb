@@ -382,3 +382,7 @@ table.focus-on tbody tr.focused td, table.focus-on tbody tr.focused th {
 .editar{
   height: 100%;
 }
+#msg-agregamas{
+  color: #000000;
+  bottom: 50px;
+}
