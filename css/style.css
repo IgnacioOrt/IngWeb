@@ -180,6 +180,31 @@ only screen and (                min-resolution: 2dppx) {
 	background-color: rgba(102, 153, 255,0.6);
 	cursor: -webkit-grab; cursor: grab;
 }
+/*ESTILOS DRAG'N'DROP*/
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+ol.example li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ol.example li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+ol.example:hover{
+
+}
+.fondo{
+	position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
 @keyframes slidy {
 0% { left: 0%; }
