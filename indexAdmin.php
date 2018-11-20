@@ -72,10 +72,7 @@ body, html {
 	            <ul class="navbar-nav">
                 	<li class="nav-item">
 	                    <a class="nav-link scroll-link" href="publicacion.php">Realizar Publicación</a>
-                	</li>
-                	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="rango.php">Asignar Rango</a>
-                	</li>
+                	</li> 
 	                <li class="nav-item">
                     	<a class="nav-link scroll-link" href="modificarInfo.php">Modificar Información</a>
                 	</li>
