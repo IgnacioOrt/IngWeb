@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['id_usuario'])) {
+        header("Location:index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,6 +64,9 @@ body, html {
 </style>
     
 </head>
+
+
+
 <body>
 	<!-- Top menu -->
 	<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
@@ -68,14 +78,20 @@ body, html {
         	<div class="collapse navbar-collapse" id="navbarNav">
 	            <ul class="navbar-nav">
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="consulta.php">Consulta de receta</a>
-                	</li>
-                	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="noticias.php">Noticias</a>
-                	</li>
-	                <li class="nav-item">
-                    	<a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
-                	</li>
+                        <a class="nav-link scroll-link" href="consultaU.php">Consulta de receta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="noticiasU.php">Noticias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="acercaU.php">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="editarReceta.php">Editar receta</a>
+                    </li>
                 	
             	</ul>
 
@@ -123,20 +139,20 @@ body, html {
     <div class="container registro">
         <div class="row">
             <div class="col-md-12">
-                <h3>Noticias</h3>
                 <?php
                     require_once 'config.php';
                     require_once 'conexion.php';
                     $base = new dbmysqli($hostname,$username,$password,$database);
-                    $query="SELECT id_noticia, titulo, descripcion FROM noticia";
+                    $id_noticia = $_GET['id_noticia'];
+                    $query="SELECT titulo, descripcion FROM noticia where id_noticia = $id_noticia";
                     $result = $base->ExecuteQuery($query);
                     if($result){
-                        while ($row=$base->GetRows($result)){
-                            $id_noticia  = $row[0];
-                            $titulo = $row[1];
-                            $descripcion = $row[2];
+                        if ($row=$base->GetRows($result)){
+                            $titulo = $row[0];
+                            $descripcion = $row[1];
                             ?>
-                            <a class="enlace-noticia" href="verNoticia.php?id_noticia=<?php echo ($id_noticia) ?>"><?php echo ($row['1']) ?></a><br>
+                            <h3><?php echo "$titulo"; ?></h3>
+                            <p><?php echo "$descripcion"; ?></p>
                             <?php
                         }
                         $base->SetFreeResult($result);
