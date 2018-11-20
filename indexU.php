@@ -36,7 +36,7 @@ body, html {
 }
 
 /* Images used */
-.img1 { background-image: url("img/PescaCercana-Virgilio.png"); }
+.img1 { background-image: url("img/helado.jpg"); }
 .img2 { background-image: url("img/ArrozNegroYLechedeNueces-AlexAtala.png"); }
 .img3 { background-image: url("img/CaminataEnElBosque-DominiqueCrenn.png"); }
 .img4 { background-image: url("img/MoleMadre-EnriqueOlvera.png"); }
