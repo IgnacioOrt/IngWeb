@@ -100,28 +100,11 @@
     	</div>
 	</nav>
 
+    <h1 style="background-color:DodgerBlue;">Hello World</h1>
+    <p style="background-color:Tomato;">Lorem ipsum...</p>
                 
-                    <div id="captioned-gallery">
-                        <figure class="slider">
-                            <figure>
-                                <img src="img/inicio1.jpg" >
-                                <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="img/inicio2.jpg" alt>
-                                <figcaption>Wanaka, New Zealand</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="img/inicio3.jpg" alt>
-                                <figcaption>Utah, United States</figcaption>
-                            </figure>
-                             <figure>
-                                <img src="img/banner.jpg" alt>
-                                <figcaption>Utah, United States</figcaption>
-                            </figure>
-                        </figure>
-                        </div>
-	<script src="dist/jquery/jquery.slim.min.js"></script>
+
+    <script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
 </body>
