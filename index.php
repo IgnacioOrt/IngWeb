@@ -105,15 +105,15 @@
                         <figure class="slider">
                             <figure>
                                 <img src="img/inicio1.jpg" >
-                                <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura</figcaption>
+                                <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura (ITA) </figcaption>
                             </figure>
                             <figure>
                                 <img src="img/inicio2.jpg" alt>
-                                <figcaption>Wanaka, New Zealand</figcaption>
+                                <figcaption>Chile en Nogada (MEX) </figcaption>
                             </figure>
                             <figure>
-                                <img src="img/inicio3.jpg" alt>
-                                <figcaption>Utah, United States</figcaption>
+                                <img src="img/inicio.jpg" alt>
+                                <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
                             </figure>
                              <figure>
                                 <img src="img/banner.jpg" alt>
