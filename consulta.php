@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    if (!isset($_SESSION['id_usuario'])) {
-        header("Location:index.php");
-    }
-?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -15,51 +9,64 @@
 </head>
 <body>
 	<!-- Top menu -->
-	<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
-    	<div class="container">
-	        <a class="navbar-brand" href="index.php">UEL UELIK</a>
-        	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-	            <span class="navbar-toggler-icon"></span>
-        	</button>
-        	<div class="collapse navbar-collapse" id="navbarNav">
-	            <ul class="navbar-nav">
-                	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="consultaU.php">Consulta de receta</a>
-                	</li>
-                	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="noticiasU.php">Noticias</a>
-                	</li>
-	                <li class="nav-item">
-                    	<a class="nav-link scroll-link" href="acercaU.php">Acerca de</a>
-                	</li>
-                	<li class="nav-item">
-                        <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>
+    <nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">UEL UELIK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="consulta.php">Consulta de receta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="editarReceta.php">Editar receta</a>
+                        <a class="nav-link scroll-link" href="noticias.php">Noticias</a>
                     </li>
-            	</ul>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
+                    </li>
+                    
+                </ul>
 
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
-            	
-            	<span class="ml-auto navbar-nav">
-            		<li class="nav-item dropdown">
-            			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            				<?php echo ($_SESSION['username']); ?>
-            			</a>
-            			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="login-dp-2">
-            				<div class="row">
-            					<div class="col-md-12">
-            						<a class="enlacesDrop" href="perfil.php">Mi perfil</a><br>
-                                    <a class="enlacesDrop" href="cerrarsesion.php">Cerrar sesión</a>
-            					</div>
-            				</div>
-            			</div>
-            		</li>
-            	</span>
-        	</div>
-    	</div>
-	</nav>
+                
+                <span class="ml-auto navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Iniciar sesión
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" id="login-dp">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="form" role="form" method="post" action="validalogin.php" accept-charset="UTF-8" id="login-nav">
+                                        <div class="form-group">
+                                             <label class="sr-only" for="email">Correo electrónico</label>
+                                             <input type="email" class="form-control" name="mail" id="email" placeholder="Correo electrónico" required>
+                                        </div>
+                                        <div class="form-group">
+                                             <label class="sr-only" for="pass">Contraseña</label>
+                                             <input type="password" class="form-control" name="pass" id="pass" placeholder="Contraseña" required>
+                                        </div>
+                                        <div class="form-group">
+                                             <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                                        </div>
+                                 </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="bottom text-center">
+                                        ¿Aún no estas registrado? <a href="registro.php"><b>Registrarse</b></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </span>
+            </div>
+        </div>
+    </nav>
 
     <div class="container registro">
         <div class="row">
@@ -111,7 +118,7 @@
                         </ul>
                     </div>
                 </div>
-                <form action="recetaU.php" method="POST">
+                <form action="receta.php" method="POST">
                     <div id="id"></div>
                     <div class="fondo text-center"><button type="submit" class="btn btn-primary" onclick="enviar()" id="btnsend">Buscar receta</button></div>
                 </form>
@@ -196,7 +203,7 @@
             var boton = "<input type='text' name='ids[]'>";
             for (var i = ingredientes.length - 1; i >= 0; i--) {
                 console.log(ingredientes[i]);
-                boton = "<input type='text' name='ids[]' value='"+ingredientes[i]+"'>";
+                boton = "<input class='oculto' type='text' name='ids[]' value='"+ingredientes[i]+"'>";
                 document.getElementById("id").innerHTML += boton;    
             }
         }

@@ -32,8 +32,8 @@
 			}
 			$datos = implode(", ",$dato);
 			//Insertamos los valores en cada campo
-			echo "INSERT INTO $tabla ($campo) VALUES ($datos)";
-			var_dump($datos);
+			//echo "INSERT INTO $tabla ($campo) VALUES ($datos)";
+			//var_dump($datos);
 			if($this->conexion->query("INSERT INTO $tabla ($campo) VALUES ($datos)") === TRUE){
 				echo "Nueva entrada agregada";
 			}else{

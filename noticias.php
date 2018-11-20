@@ -10,9 +10,6 @@
 	<link rel="stylesheet" href="css/style.css">
     
 </head>
-
-
-
 <body>
 	<!-- Top menu -->
 	<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
@@ -69,86 +66,40 @@
             				</div>
             			</div>
             		</li>
-            	</span>
-        	</div>
+            	</span>        	
+            </div>
     	</div>
 	</nav>
 
-                <!--
-                    <div id="captioned-gallery">
-                        <div class="arrows prev"></div>
-
-                        <figure class="slider">
-                            <figure>
-                                <img src="img/inicio1.jpg" >
-                                <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura (ITA) </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="img/inicio2.jpg" alt>
-                                <figcaption>Chile en Nogada (MEX) </figcaption>
-                            </figure>
-                            <figure>
-                                <img src="img/inicio3.png" alt>
-                                <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
-                            </figure>
-                             <figure>
-                                <img src="img/inicio4.png" alt>
-                                <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="img/inicio5.png" alt>
-                                <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="img/inicio6.png" alt>
-                                <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
-                            </figure>
-                            </figure>
-                            <div class="arrows next"></div>
-                        </div> -->
-
-
-    
-
-
-    <div id="captioned-gallery">
-            <figure class="slider">
-       
-                <figure>
-                    <img class="mySlides" src="img/inicio1.jpg" style="width:100%">
-                    <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura (ITA) </figcaption>
-                </figure>
-
-                <figure>
-                    <img class="mySlides" src="img/inicio2.jpg" style="width:100%">
-                    <figcaption>Chile en Nogada (MEX) </figcaption>
-                </figure>
-
-                <figure>
-                    <img class="mySlides" src="img/¿QuienmatóalCordero_-Gaggan.png" style="width:100%">
-                    <figcaption>¿Quien Mató al Cordero? - Gaggan Anand (IND) </figcaption>
-                </figure>
-
-                <figure>
-                    <img class="mySlides" src="img/inicio4.jpg" style="width:100%">
-                    <figcaption>Siete Fuegos - Francis Mallmann (ARG) </figcaption>
-                </figure>
-                
-                <figure>
-                    <img class="mySlides" src="img/inicio3.jpg" style="width:100%">
-                    <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
-                </figure>
-                
-            </figure>
+    <div class="container registro">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Noticias</h3>
+                <?php
+                    require_once 'config.php';
+                    require_once 'conexion.php';
+                    $base = new dbmysqli($hostname,$username,$password,$database);
+                    $query="SELECT id_noticia, titulo, descripcion FROM noticia";
+                    $result = $base->ExecuteQuery($query);
+                    if($result){
+                        while ($row=$base->GetRows($result)){
+                            $id_noticia  = $row[0];
+                            $titulo = $row[1];
+                            $descripcion = $row[2];
+                            ?>
+                            <a class="enlace-noticia" href="verNoticia.php?id_noticia=<?php echo ($id_noticia) ?>"><?php echo ($row['1']) ?></a><br>
+                            <?php
+                        }
+                        $base->SetFreeResult($result);
+                    }else{
+                        echo "<h3>Error generando la consulta</h3>";
+                    }
+                ?>
+            </div>
+        </div>
     </div>
-
-
-
-
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
-
-
 </body>
 </html>

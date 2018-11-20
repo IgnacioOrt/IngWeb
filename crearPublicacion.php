@@ -100,14 +100,49 @@ body, html {
     	</div>
 	</nav>
 
-    
-    <div class="bg-image img1"></div>
-    <div class="bg-image img2"></div>
-    <div class="bg-image img3"></div>
-    <div class="bg-image img4"></div>
+  <div id="page-wrapper">
+                <div class="container-fluid registro ">
+                    <div class="row bg-title">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                            <h4 class="page-title">Nueva noticia<br><br></h4> </div>
+                        
+                        <!-- /.col-lg-12 -->
+                    </div>
+                                    <!--row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            <form action="crearPublicacion.php" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="titulo" class="">Título</label>
+                                    <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo" aria-describedby="basic-addon1" maxlength="30" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Descripción</label>
+                                    <textarea class="form-control" rows="3" name="descripcion" required></textarea>
+                                </div>
+                                <br>
+                                <input type="submit" name="enviar" value="Agregar noticia">
+                            </form>
+                            <?php
+                            if (isset($_POST['enviar'])) {
+                              $titulo = $_POST['titulo'];
+                              $descripcion = $_POST['descripcion'];
+                              $id_usuario = $_SESSION['id_usuario'];
+                              require_once 'config.php';
+                              require_once 'conexion.php';
+                              $base = new dbmysqli($hostname,$username,$password,$database);
+                              $noticia = array("id_usuario" => "$id_usuario", "titulo" => "$titulo", "descripcion" => "$descripcion");
+                              
+                              $base->insertar("noticia",$noticia);
+                            }
+                            ?>
+                        </div>
+                    </div>
 
-    <div class="bg-text">Hola! <br><?php echo ($_SESSION['username']); ?></div>
-
+                </div>
+            </div>
 
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>

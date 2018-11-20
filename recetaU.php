@@ -24,16 +24,16 @@
         	<div class="collapse navbar-collapse" id="navbarNav">
 	            <ul class="navbar-nav">
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="consulta.php">Consulta de receta</a>
+	                    <a class="nav-link scroll-link" href="consultaU.php">Consulta de receta</a>
                 	</li>
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="noticias.php">Noticias</a>
+	                    <a class="nav-link scroll-link" href="noticiasU.php">Noticias</a>
                 	</li>
 	                <li class="nav-item">
-                    	<a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
+                    	<a class="nav-link scroll-link" href="acercaU.php">Acerca de</a>
                 	</li>
                 	<li class="nav-item">
-                        <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>
+                        <a class="nav-link scroll-link" href="crearRecetaU.php">Crear receta</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll-link" href="editarReceta.php">Editar receta</a>
@@ -70,7 +70,6 @@
                         require_once 'conexion.php';
                         $base = new dbmysqli($hostname,$username,$password,$database);
                     $consulta = "SELECT DISTINCT id_receta FROM ingrediente where ";
-                    var_dump($_POST['ids']);
                     if ( !empty($_POST["ids"]) && is_array($_POST["ids"]) ) {
                         foreach ( $_POST["ids"] as $ids ) {
                             $id[] = $ids;
@@ -85,15 +84,21 @@
                     }
                     $result = $base->ExecuteQuery($consulta);
                     if($result){
+                        $i = 0;
+                        $result2 = $result;
+                        //var_dump($base->GetRows($result));
+                        ?>
+                            Estas son algunas recetas que encontramos para tí<br>
+                            <br>
+                        <?php
                         while ($row=$base->GetRows($result)){
                             $consulta2 = "SELECT nombre,id_receta FROM receta WHERE id_receta = '$row[0]'";
-                            echo "$consulta2";
                             $result2 = $base->ExecuteQuery($consulta2);
                             if($result2){
                                 if ($row=$base->GetRows($result2)){
                                     $nombre = $row['0'];
                                     ?>
-                                    <a href="verRecetaU.php?id_receta=<?php echo ($row['1']) ?>"><?php echo ($row['0']) ?></a>
+                                    <a href="verRecetaU.php?id_receta=<?php echo ($row['1']) ?>"><?php echo ($row['0']) ?></a><br>
                                     <?php
                                 }
                                 $base->SetFreeResult($result2);

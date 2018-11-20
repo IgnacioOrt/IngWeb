@@ -91,6 +91,10 @@ only screen and (                min-resolution: 2dppx) {
     padding-top: 100px;
     color: #fff;
 }
+.container-fluid.registro{
+    padding-top: 100px;
+    color: #fff;
+}
 .row.ingredientes{
 	padding: 10px;
 	width: 90%;
@@ -250,4 +254,11 @@ figure.slider figure figcaption {
   background: rgba(0,0,0,0.4);
   color: #fff; width: 100%;
   font-size: 2rem; padding: .6rem; 
+}
+.enlace-noticia{
+	color: #0056b3;
+}
+.oculto{
+	height: 0px;
+	width: 0px;
 }
