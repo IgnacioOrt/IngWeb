@@ -35,7 +35,7 @@ body, html {
 }
 
 /* Images used */
-.img1 { background-image: url("img/CaminataEnElBosque-DominiqueCrenn.png"); } 
+.img1 { background-image: url("img/Navidad.jpg"); } 
 .img2 { background-image: url("img/MoleMadre-EnriqueOlvera.png"); }
 .img3 { background-image: url("img/ArrozNegroYLechedeNueces-AlexAtala.png"); } 
 .img4 { background-image: url("img/PescaCercana-Virgilio.png"); } 
@@ -99,20 +99,21 @@ body, html {
         	</div>
     	</div>
 	</nav>
-
+  <div class="bg-image img1">
   <div id="page-wrapper">
                 <div class="container-fluid registro ">
-                    <div class="row bg-title">
-                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                            <h4 class="page-title">Nueva noticia<br><br></h4> </div>
-                        
-                        <!-- /.col-lg-12 -->
-                    </div>
                                     <!--row -->
                     <div class="row">
                         <div class="col-md-12">
                             
                             <form action="crearPublicacion.php" method="POST" enctype="multipart/form-data">
+
+                                <div class="container registro">
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                        <h2 style="text-align: center;">Agrega tu Publicación</h2>
+                                    </div>
+                                  </div>
                                 <div class="form-group">
                                     <label for="titulo" class="">Título</label>
                                     <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo" aria-describedby="basic-addon1" maxlength="30" required>
@@ -123,7 +124,7 @@ body, html {
                                     <textarea class="form-control" rows="3" name="descripcion" required></textarea>
                                 </div>
                                 <br>
-                                <input type="submit" name="enviar" value="Agregar noticia">
+                                <input type="submit" name="enviar" value="Agregar noticia" class="btn btn-primary">
                             </form>
                             <?php
                             if (isset($_POST['enviar'])) {
@@ -143,7 +144,7 @@ body, html {
 
                 </div>
             </div>
-
+          </div>
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
