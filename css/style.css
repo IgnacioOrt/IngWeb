@@ -184,6 +184,10 @@ only screen and (                min-resolution: 2dppx) {
 	font-size: 12px;
 	color: #6666ff;
 }
+.row.ingredientes2{
+	padding: 10px;
+	margin:  0 auto;
+}
 /*ESTILOS DRAG'N'DROP*/
 /* body.dragging, body.dragging * {
   cursor: move !important;

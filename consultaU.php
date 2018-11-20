@@ -116,7 +116,7 @@
                         while ($row=$base->GetRows($result)){
                             $nombre = $row['0'];
                             ?>
-                                <li class="list-group-item" id="<?php echo $nombre ?>" onclick="agregar(<?php echo "'$nombre'" ?>)"><?php echo "$nombre"; ?></li>
+                                <li class="list-group-item" id="<?php echo "$nombre" ?>" onclick="agregar(<?php echo "'$nombre'" ?>)"><?php echo "$nombre"; ?></li>
                             <?php
                         }
                         $base->SetFreeResult($result);
@@ -125,20 +125,27 @@
                     }
                     $base -> CloseConnection();
                 ?>
+                    <div id="agregarIngrediente"></div>
                 </ul>
             </div>
             <div class="col-md-9 col-der">
-                <div class="row">
+                <div class="row ingredientes2 text-center">
                     <div class="col-md-12">
-                        
+                        <h3>Ingredientes agregados</h3>
+                        <span class="msg-ayuda">Si deseas eliminar un ingrediente da click sobre él</span>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-md-12">
-                        <div id="ingredientes"></div>
+                        <ul class="list-group text-ingredientes">
+                            <div id="ingredientes"></div>
+                        </ul>
                     </div>
                 </div>
-                <div class="fondo"><a href="#" class="btn btn-primary">Buscar receta</a></div>
+                <form action="recetaU.php" method="POST">
+                    <div id="id"></div>
+                    <div class="fondo text-center"><button type="submit" class="btn btn-primary" onclick="enviar()" id="btnsend">Buscar receta</button></div>
+                </form>
             </div>
         </div>
     </div>
@@ -171,13 +178,58 @@
 });
     </script>
     <script type="text/javascript">
-        function agregar(nombre){
-            var ingrediente = "nombre";
-            document.getElementById("ingredientes").innerHTML += ingrediente;
-            console.log(nombre);
+        
+        var ingredientes = [];
+        if (ingredientes.length<3) {
+            document.getElementById("btnsend").disabled = true;
+        }else{
+            document.getElementById("btnsend").disabled = false;
         }
-        function quitar(nombre) {
+        function agregar(nombre){
+            
+            console.info(  );
+            if (ingredientes.includes(nombre)) {
+                alert("El ingrediente ya se ha agregado");
+            }else{
+                ingredientes.push(nombre);
+                var ingrediente = "<li class='list-group-item' id='"+nombre+"' onclick='eliminar(\""+nombre+"2\")'>"+nombre+"</li>";
+                console.log(ingrediente);
+                document.getElementById("ingredientes").innerHTML += ingrediente;
+                document.getElementById(nombre).remove();
+                console.log(nombre);
+                if (ingredientes.length<3) {
+                    document.getElementById("btnsend").disabled = true;
+                }else{
+                   document.getElementById("btnsend").disabled = false;
+                }
+            }
+        }
+        function eliminar(nombre) {
+            nombre = nombre.substring(0, nombre.length-1);
+            console.log(nombre);
+            var index = ingredientes.indexOf(nombre);
+            if (index > -1) {
+                ingredientes.splice(index, 1);
+            }
+            console.log(index);
+            var ingrediente = "<li class='list-group-item' id='"+nombre+"' onclick='agregar(\""+nombre+"\")'>"+nombre+"</li>";
             document.getElementById(nombre).remove();
+            document.getElementById("agregarIngrediente").innerHTML += ingrediente;
+            if (ingredientes.length<3) {
+                document.getElementById("btnsend").disabled = true;
+            }else{
+                document.getElementById("btnsend").disabled = false;
+            }
+            console.log("Elemento eliminado");
+        }
+        function enviar(){
+            
+            var boton = "<input type='text' name='ids[]'>";
+            for (var i = ingredientes.length - 1; i >= 0; i--) {
+                console.log(ingredientes[i]);
+                boton = "<input type='text' name='ids[]' value='"+ingredientes[i]+"'>";
+                document.getElementById("id").innerHTML += boton;    
+            }
         }
     </script>
 </body>
