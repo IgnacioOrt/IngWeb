@@ -128,7 +128,57 @@ only screen and (                min-resolution: 2dppx) {
 	text-transform: none;
 	text-align: center;
 }
+.col-izq{
+	border: solid;
+    border-radius: 2px;
+    
+    border-color: rgba(255,255,255,0.8);
+    height: 80%;
+    margin-right: -20px;
+    padding-right: 10px;
+}
+.col-der{
+	border: solid;
+	border-left: none;
+    border-radius: 2px;
+    border-color: rgba(255,255,255,0.8);
+    height: 80%;	
+    margin-left: 20px;
+    padding-left: 10px;
+}
+.text-ingredientes{
+	color: #000000;
+}
+.scroll1{
+	max-height: 50%;
+	overflow-y: scroll;
+}
+.scroll2{
+	max-height: 150px;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+} 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.list-group-item:hover{
+	background-color: rgba(102, 153, 255,0.6);
+}
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
 @keyframes slidy {
 0% { left: 0%; }

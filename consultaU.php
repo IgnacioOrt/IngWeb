@@ -107,38 +107,48 @@
                     <input type="text" class="form-control" id="busqueda" placeholder="Nombre" required>
                 </div>
                 <div id="resultado"></div>
+                <ul class="list-group text-ingredientes scroll1">
+                    <li class="list-group-item">Another</li>
+                <?php
+                    $consulta = "SELECT DISTINCT nombre FROM ingrediente";
+                    $result = $base->ExecuteQuery($consulta);
+                    if($result){
+                        while ($row=$base->GetRows($result)){
+                            $nombre = $row['0'];
+                            ?>
+                                <li class="list-group-item" id="<?php echo $nombre ?>" onclick="agregar(<?php echo "'$nombre'" ?>)"><?php echo "$nombre"; ?></li>
+                            <?php
+                        }
+                        $base->SetFreeResult($result);
+                    }else{
+                        echo "<h3>Error generando la consulta</h3>";
+                    }
+                    $base -> CloseConnection();
+                ?>
+                </ul>
             </div>
-            <div class="col-md-9">
-                mesa
+            <div class="col-md-9 col-der">
+                
             </div>
         </div>
     </div>
 
-	<!--<script src="dist/jquery/jquery.slim.min.js"></script>-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="dist/jquery/jquery.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-        var consulta;
-        //hacemos focus al campo de búsqueda
-        $("#busqueda").focus();
-                                                                                                     
-        //comprobamos si se pulsa una tecla
-        $("#busqueda").keyup(function(e){
-                                      
-              //obtenemos el texto introducido en el campo de búsqueda
-              consulta = $("#busqueda").val();
-              //hace la búsqueda                                                                                  
-              $.ajax({
+            var consulta;
+            //comprobamos si se pulsa una tecla
+            $("#busqueda").keyup(function(e){
+                //obtenemos el texto introducido en el campo de búsqueda
+                consulta = $("#busqueda").val();
+                //hace la búsqueda
+                $.ajax({
                     type: "POST",
                     url: "buscar.php",
                     data: "b="+consulta,
                     dataType: "html",
-                    beforeSend: function(){
-                    //imagen de carga
-                    $("#resultado").html("<p align='center'><img src='ajax-loader.gif' /></p>");
-                    },
                     error: function(){
                     alert("error petición ajax");
                     },
@@ -149,6 +159,12 @@
               });                                                                         
         });                                                     
 });
+    </script>
+    <script type="text/javascript">
+        function agregar(nombre){
+            
+            console.log(nombre);
+        }
     </script>
 </body>
 </html>
