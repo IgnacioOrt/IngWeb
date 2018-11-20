@@ -104,23 +104,24 @@
                     <div id="captioned-gallery">
                         <figure class="slider">
                             <figure>
-                                <img src="img/inicio1.jpg" alt>
-                                <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura</figcaption>
+                                <img src="img/inicio1.jpg" >
+                                <figcaption>Oops, Tiré la Tarta de Limón - Massimo Bottura (ITA) </figcaption>
                             </figure>
                             <figure>
                                 <img src="img/inicio2.jpg" alt>
-                                <figcaption>Wanaka, New Zealand</figcaption>
+                                <figcaption>Chile en Nogada (MEX) </figcaption>
                             </figure>
                             <figure>
-                                <img src="img/inicio3.jpg" alt>
-                                <figcaption>Utah, United States</figcaption>
+                                <img src="img/inicio3.png" alt>
+                                <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
                             </figure>
                              <figure>
-                                <img src="img/banner.jpg" alt>
-                                <figcaption>Utah, United States</figcaption>
+                                <img src="img/inicio4.png" alt>
+                                <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
                             </figure>
                         </figure>
                         </div>
+
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
