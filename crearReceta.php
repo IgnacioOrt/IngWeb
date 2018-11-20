@@ -36,8 +36,8 @@ body, html {
 
 /* Images used */
 .img1 { background-image: url("img/LeChocolat-DominiqueCrenn.png"); }
-.img2 { background-image: url("img/ArrozNegroYLechedeNueces-AlexAtala.png"); }
-.img3 { background-image: url("img/CaminataEnElBosque-DominiqueCrenn.png"); }
+.img2 { background-image: url("img/ColoresDelAmazonas-Virgilio.png"); }
+.img3 { background-image: url("img/CosechaPasachámac-Virgilio.png"); }
 .img4 { background-image: url("img/MoleMadre-EnriqueOlvera.png"); }
 
 
@@ -71,13 +71,13 @@ body, html {
         	<div class="collapse navbar-collapse" id="navbarNav">
 	            <ul class="navbar-nav">
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="consulta.php">Consulta de receta</a>
+	                    <a class="nav-link scroll-link" href="consultaU.php">Consulta de receta</a>
                 	</li>
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="noticias.php">Noticias</a>
+	                    <a class="nav-link scroll-link" href="noticiasU.php">Noticias</a>
                 	</li>
 	                <li class="nav-item">
-                    	<a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
+                    	<a class="nav-link scroll-link" href="acercaU.php">Acerca de</a>
                 	</li>
                 	<li class="nav-item">
                         <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>
@@ -139,7 +139,7 @@ body, html {
     	</div>
 	</nav>
 
-    <div class="bg-image img1">
+    <div class="bg-image img3">
     <div class="container registro">
         <div class="row">
             <div class="col-md-12">
@@ -276,6 +276,8 @@ body, html {
         </div>
     </div>
     </div>
+    <br>
+    <br>
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
