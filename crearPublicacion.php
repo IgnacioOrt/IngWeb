@@ -72,10 +72,10 @@ body, html {
 	            <ul class="navbar-nav">
                 	<li class="nav-item">
 	                    <a class="nav-link scroll-link" href="crearPublicacion.php">Realizar Publicación</a>
-                	</li> 
-	                <li class="nav-item">
-                    	<a class="nav-link scroll-link" href="modificarInfo.php">Modificar Información</a>
                 	</li>
+                  <li class="nav-item">
+                      <a class="nav-link scroll-link" href="agregaAdmin.php">Agregar administrador</a>
+                  </li>
             	</ul>
 
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
