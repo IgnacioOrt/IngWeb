@@ -117,7 +117,7 @@
                             </figure>
                              <figure>
                                 <img src="img/inicio4.png" alt>
-                                <figcaption>Utah, United States</figcaption>
+                                <figcaption>Siete Fuegos - Francis Mallmann (ARG)</figcaption>
                             </figure>
                         </figure>
                         </div>
