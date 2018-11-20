@@ -171,23 +171,6 @@
             </figure>
     </div>
 
-                    <div class="w3-row-padding w3-section">
-                        <div class="w3-col s4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio1.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
-                        </div>
-                        <div class="w3-col s4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio2.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
-                        </div>
-                        <div class="w3-col s4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio3.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
-                        </div>
-                        <div class="w3-col s4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio4.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
-                        </div>
-                        <div class="w3-col s4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio5.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
-                        </div>
-                    </div>
 </div>
 
 
@@ -196,27 +179,6 @@
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
 
-    <script>
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-opacity-off";
-}
-</script>
 
 </body>
 </html>
