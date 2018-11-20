@@ -112,7 +112,7 @@
                                 <figcaption>Chile en Nogada (MEX) </figcaption>
                             </figure>
                             <figure>
-                                <img src="img/inicio3.jpg" alt>
+                                <img src="img/inicio3.png" alt>
                                 <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
                             </figure>
                              <figure>
@@ -121,6 +121,7 @@
                             </figure>
                         </figure>
                         </div>
+
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
