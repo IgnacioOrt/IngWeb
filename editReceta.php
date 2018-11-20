@@ -134,7 +134,7 @@ body, html {
                     }
                 ?>
                 <form method="POST" action="validaReceta.php" enctype="multipart/form-data">
-                        <div class="row">
+                    <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="nombre">Nombre de la receta</label>
@@ -145,98 +145,73 @@ body, html {
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label for="ing1">Ingrediente</label>
-                                    <input type="text" class="form-control" name="ingrediente[]" id="ing1"placeholder="Nombre" required>
+                                    <label >Ingrediente</label>
+                                    
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="ing1">Gramaje</label>
-                                    <input type="text" class="form-control" name="gramaje[]" id="ing1" placeholder="Gramaje">
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
                                     <label for="ing1">Unidad</label>
-                                    <select class='custom-select' name='unidad[]' required>
-                                        <option value=''>Seleccione una unidad</option>
-                                        <option value='Pizca'>Pizca</option>
-                                        <option value='Pieza'>Pieza</option>
-                                        <option value='Cucharada'>Cucharada</option>
-                                        <option value='Onza'>Onza</option>
-                                        <option value='Taza'>Taza</option>
-                                        <option value='Litro'>Litro</option>
-                                        <option value='Gramos'>Gramos</option>
-                                        <option value='Libras'>Libras</option>
-                                        <option value='Kilo'>Kilo</option>
-                                        <option value='Al gusto'>Al gusto</option>
-                                    </select>
                                 </div>
                             </div>
                             <div class="col-sm-2">
                                 <label class="quitar-ingrediente">Quitar ingrediente</label>
                             </div>
                         </div>
+                    <?php
+                        $sql = "SELECT nombre,cantidad FROM ingrediente WHERE id_receta = '$id_receta'";
+                        $result = $base->ExecuteQuery($sql);
+                        if($result){
+                            while ($row=$base->GetRows($result)){
+                                $nombre = $row[0];
+                                $cantidad = $row[1];
+                                ?>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" value="<?php echo($nombre)?>" name="ingrediente[]" id="ing1"placeholder="Nombre" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" value="<?php echo($cantidad)?>" name="gramaje[]" id="ing1" placeholder="Gramaje">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <select class='custom-select' name='unidad[]' required>
+                                                <option value=''>Seleccione una unidad</option>
+                                                <option value='Pizca'>Pizca</option>
+                                                <option value='Pieza'>Pieza</option>
+                                                <option value='Cucharada'>Cucharada</option>
+                                                <option value='Onza'>Onza</option>
+                                                <option value='Taza'>Taza</option>
+                                                <option value='Litro'>Litro</option>
+                                                <option value='Gramos'>Gramos</option>
+                                                <option value='Libras'>Libras</option>
+                                                <option value='Kilo'>Kilo</option>
+                                                <option value='Al gusto'>Al gusto</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                            $base->SetFreeResult($result);
+                        }else{
+                            echo "<h3>Error generando la consulta</h3>";
+                        }
+                    ?>
+
                         
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                <input type="text" class="form-control" name="ingrediente[]" placeholder="Nombre" required>
-                            </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                <input type="text" class="form-control" name="gramaje[]" placeholder="Gramaje">
-                            </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <select class='custom-select' name='unidad[]' required>
-                                        <option value=''>Seleccione una unidad</option>
-                                        <option value='Pizca'>Pizca</option>
-                                        <option value='Pieza'>Pieza</option>
-                                        <option value='Cucharada'>Cucharada</option>
-                                        <option value='Onza'>Onza</option>
-                                        <option value='Taza'>Taza</option>
-                                        <option value='Litro'>Litro</option>
-                                        <option value='Gramos'>Gramos</option>
-                                        <option value='Libras'>Libras</option>
-                                        <option value='Kilo'>Kilo</option>
-                                        <option value='Al gusto'>Al gusto</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                <input type="text" class="form-control" name="ingrediente[]" placeholder="Nombre" required>
-                            </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                <input type="text" class="form-control" name="gramaje[]" placeholder="Gramaje">
-                            </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <select class='custom-select' name='unidad[]' required>
-                                        <option value=''>Seleccione una unidad</option>
-                                        <option value='Pizca'>Pizca</option>
-                                        <option value='Pieza'>Pieza</option>
-                                        <option value='Cucharada'>Cucharada</option>
-                                        <option value='Onza'>Onza</option>
-                                        <option value='Taza'>Taza</option>
-                                        <option value='Litro'>Litro</option>
-                                        <option value='Gramos'>Gramos</option>
-                                        <option value='Libras'>Libras</option>
-                                        <option value='Kilo'>Kilo</option>
-                                        <option value='Paquete'>Paquete</option>
-                                        <option value='Al gusto'>Al gusto</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
                         <div id="demo"></div>
                         <button class="btn" onclick="agregar()">+</button> Añadir ingrediente<br>
                         <div class="row">

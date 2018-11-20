@@ -386,3 +386,6 @@ table.focus-on tbody tr.focused td, table.focus-on tbody tr.focused th {
   color: #000000;
   bottom: 50px;
 }
+.text-enlace{
+  color: #fff;
+}

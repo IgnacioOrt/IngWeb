@@ -146,7 +146,7 @@ body, html {
                                 if ($row=$base->GetRows($result2)){
                                     $nombre = $row['0'];
                                     ?>
-                                    <a href="verRecetaU.php?id_receta=<?php echo ($row['1']) ?>"><?php echo ($row['0']) ?></a><br>
+                                    <a class="text-enlace" href="verRecetaU.php?id_receta=<?php echo ($row['1']) ?>"><?php echo ($row['0']) ?></a><br>
                                     <?php
                                 }
                                 $base->SetFreeResult($result2);
