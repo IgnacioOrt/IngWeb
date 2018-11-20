@@ -37,7 +37,8 @@
                 </ul>
 
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
-                <span class="ml-auto navbar-nav">
+                
+               <span class="ml-auto navbar-nav">
                     <li class="nav-item dropdown show">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Iniciar sesión
@@ -142,7 +143,7 @@
 
     
 
-<div class="w3-content" style="max-width:1200px">
+
     <div id="captioned-gallery">
             <figure class="slider">
        
@@ -157,23 +158,23 @@
                 </figure>
 
                 <figure>
-                    <img class="mySlides" src="img/inicio3.jpg" style="width:100%">
-                    <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
+                    <img class="mySlides" src="img/¿QuienmatóalCordero_-Gaggan.png" style="width:100%">
+                    <figcaption>¿Quien Mató al Cordero? - Gaggan Anand (IND) </figcaption>
                 </figure>
 
                 <figure>
                     <img class="mySlides" src="img/inicio4.jpg" style="width:100%">
                     <figcaption>Siete Fuegos - Francis Mallmann (ARG) </figcaption>
                 </figure>
-
+                
                 <figure>
-                    <img class="mySlides" src="img/inicio5.jpg" style="width:100%">
-                    <figcaption>Bola de Nieve de Mango - Gaggan Anand (IND) </figcaption>
+                    <img class="mySlides" src="img/inicio3.jpg" style="width:100%">
+                    <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
                 </figure>
+                
             </figure>
     </div>
 
-</div>
 
 
 
