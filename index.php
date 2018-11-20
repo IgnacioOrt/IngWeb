@@ -160,8 +160,13 @@
                 </figure>
 
                 <figure>
-                    <img class="mySlides" src="img/inicio4.png" style="width:100%">
+                    <img class="mySlides" src="img/inicio4.jpg" style="width:100%">
                     <figcaption>Siete Fuegos - Francis Mallmann (ARG) </figcaption>
+                </figure>
+
+                <figure>
+                    <img class="mySlides" src="img/inicio5.jpg" style="width:100%">
+                    <figcaption>Bola de Nieve de Mango - Gaggan Anand (IND) </figcaption>
                 </figure>
             </figure>
     </div>
@@ -177,7 +182,10 @@
                             <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio3.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
                         </div>
                         <div class="w3-col s4">
-                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio4.png" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
+                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio4.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
+                        </div>
+                        <div class="w3-col s4">
+                            <img class="demo w3-opacity w3-hover-opacity-off" src="img/inicio5.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
                         </div>
                     </div>
 </div>
