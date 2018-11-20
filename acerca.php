@@ -99,13 +99,14 @@
         	</div>
     	</div>
 	</nav>
+    <br><br/>
+    <h1 align="center">¿Quiénes Somos?</h1>
+    <p>En HTML, un título es exactamente lo que parece: un título o un subtitulo real. Cuando pones un texto en una etiqueta <em>h1</em> , El texto será puesto en negrilla, y la dimensión de la letra será igual al número del encabezado. Los títulos pueden tener dimensiones entre 1 y 6 , siendo 1 la mas pequeña y 6 la mas grande.</p>
 
-    <h1 style="background-color:DodgerBlue;">Hello World</h1>
-    <p style="background-color:Tomato;">Lorem ipsum...</p>
-                
 
     <script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
 	<script src="dist/popper/umd/popper.min.js"></script>
 </body>
+
 </html>
