@@ -11,11 +11,15 @@
             $sql = "SELECT * FROM ingrediente WHERE nombre LIKE '%".$b."%'";
             $result = $base->ExecuteQuery($sql);
             if($result){
+                  echo "<ul class='list-group text-ingredientes scroll2'>";
                   while ($row=$base->GetRows($result)){
                         $nombre = $row['2'];
                         $id = $row['1'];
-                        echo "$nombre<br>";
+                        
+                        echo "<li class='list-group-item'>$nombre</li>";
+                        
                   }
+                  echo "</ul><br>";
                   $base->SetFreeResult($result);
             }else{
                   echo "<h3>Error generando la consulta</h3>";
