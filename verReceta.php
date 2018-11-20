@@ -20,8 +20,8 @@ body, html {
 
 .bg-image {
   /* Full height */
-  height: 100%; 
-  
+  height: 125%; 
+
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@ body, html {
 }
 
 /* Images used */
-.img1 { background-image: url("img/Limonada.png"); }
+.img1 { background-image: url("img/Limonada.jpg"); }
 .img2 { background-image: url("img/ArrozNegroYLechedeNueces-AlexAtala.png"); }
 .img3 { background-image: url("img/CaminataEnElBosque-DominiqueCrenn.png"); }
 .img4 { background-image: url("img/MoleMadre-EnriqueOlvera.png"); }
@@ -38,7 +38,7 @@ body, html {
 /* Position text in the middle of the page/image */
 .bg-text {
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
   font-size: 80px;
