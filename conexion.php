@@ -35,7 +35,7 @@
 			//echo "INSERT INTO $tabla ($campo) VALUES ($datos)";
 			//var_dump($datos);
 			if($this->conexion->query("INSERT INTO $tabla ($campo) VALUES ($datos)") === TRUE){
-				echo "Nueva entrada agregada";
+				echo "<br>Nueva entrada agregada";
 			}else{
 				echo "Error al insertar los datos ".$this->conexion->error;
 			}
