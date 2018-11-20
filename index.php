@@ -125,7 +125,7 @@
                 </figure>
 
                 <figure>
-                    <img class="mySlides" src="img/¿QuienmatóalCordero_-Gaggan.png" style="width:100%">
+                    <img class="mySlides" src="img/Gaggan.png" style="width:100%">
                     <figcaption>¿Quien Mató al Cordero? - Gaggan Anand (IND) </figcaption>
                 </figure>
 
