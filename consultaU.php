@@ -107,7 +107,7 @@
                     <input type="text" class="form-control" id="busqueda" placeholder="Nombre" required>
                 </div>
                 <div id="resultado"></div>
-                <ul class="list-group text-ingredientes scroll1">
+                <ol class="list-group text-ingredientes scroll1">
                     <li class="list-group-item">Another</li>
                 <?php
                     $consulta = "SELECT DISTINCT nombre FROM ingrediente";
@@ -125,7 +125,7 @@
                     }
                     $base -> CloseConnection();
                 ?>
-                </ul>
+                </ol>
             </div>
             <div class="col-md-9 col-der">
                 
@@ -156,15 +156,36 @@
                     $("#resultado").empty();
                     $("#resultado").append(data);                                                             
                     }
-              });                                                                         
-        });                                                     
-});
+                });
+            });
+        });
     </script>
     <script type="text/javascript">
         function agregar(nombre){
-            
+
             console.log(nombre);
         }
     </script>
+    <script type="text/javascript">
+        $("ol.nav").sortable({
+  group: 'nav',
+  nested: false,
+  vertical: false,
+  exclude: '.divider-vertical',
+  onDragStart: function($item, container, _super) {
+    $item.find('ol.dropdown-menu').sortable('disable');
+    _super($item, container);
+  },
+  onDrop: function($item, container, _super) {
+    $item.find('ol.dropdown-menu').sortable('enable');
+    _super($item, container);
+  }
+});
+
+$("ol.dropdown-menu").sortable({
+  group: 'nav'
+});
+    </script>
+    <script src="js/jquery-sortable.min.js"></script>
 </body>
 </html>
