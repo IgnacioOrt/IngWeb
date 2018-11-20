@@ -26,7 +26,7 @@ body, html {
 
 .bg-image {
   /* Full height */
-  height: 120%; 
+  height: 100%; 
   
   /* Center and scale the image nicely */
   background-position: center;

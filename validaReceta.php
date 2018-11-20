@@ -1,3 +1,16 @@
+<style type="text/css">
+	.ball {
+  margin-top: 50px;
+  margin-left: -200px;
+  width: 120px;
+  height: 40px;
+  background-color: #EDE053;
+  border-radius: 20px;
+  transition: 1s;
+  line-height: 40px;
+  text-align: center;
+}
+</style>
 <?php
 	session_start();
 	$id_usuario = $_SESSION['id_usuario'];
@@ -55,4 +68,19 @@
 		$base->insertar("ingrediente",$insert);
 	}
 	$base -> CloseConnection();
+	?>
+	<a href="verRecetaU.php?id_receta=<?php echo $id_receta ?>" id="miEnlace">VEr</a>;
+	<div class="ball" id="ball">
+  Loaded
+</div>
+	?php
 ?>
+<script type="text/javascript">
+	window.onload = function() {
+  var ball = document.getElementById('ball')
+  ball.style.marginLeft = "25px";
+};
+</script>
+<script>
+	document.getElementById("miEnlace").click();
+</script>

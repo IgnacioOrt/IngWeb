@@ -114,16 +114,29 @@ body, html {
         <?php
           require_once 'config.php';
           require_once 'conexion.php';
+          $id_usuario = $_SESSION['id_usuario'];
           $base = new dbmysqli($hostname,$username,$password,$database);
-          $query="SELECT id_noticia, titulo, descripcion FROM noticia";
+          $query="SELECT id_receta, nombre FROM receta WHERE id_usuario = $id_usuario";
           $result = $base->ExecuteQuery($query);
+          ?>
+          <div class="table-responsive">
+                <table class="table">
+                            <tr>
+                                <th>Nombre de la receta</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                            </tr>
+              </div>
+              <?php
           if($result){
             while ($row=$base->GetRows($result)){
-              $id_noticia  = $row[0];
-              $titulo = $row[1];
-              $descripcion = $row[2];
+              
               ?>
-              <a class="enlace-noticia" href="verNoticia.php?id_noticia=<?php echo ($id_noticia) ?>"><?php echo ($row['1']) ?></a><br>
+              <tr>
+                <td><a href="verReceta.php?id_receta=<?php echo ($row['0']) ?>"><?php echo ($row['1']) ?></a></td>
+                <td><a href="editReceta.php?id_receta=<?php echo ($row['0']) ?>"><img class="editar" src="img/editar.png"></a></td>
+                <td><a href="eliminarReceta.php?id_receta=<?php echo ($row['0']) ?>" onclick="return confirm('¿Esta seguro que desea eliminar?');"><img class="editar" src="img/eliminar.png"></a></td>
+              </tr>
               <?php
             }
             $base->SetFreeResult($result);

@@ -61,22 +61,25 @@
 		//Ejemplo
 		//$clientesborrar = array("idcliente"=>1,”idcliente”=>50, “idcliente”=>8 , “idcliente”=> 104);
 		//$conectadb ->borrar(“clientes”,$clientesborrar) ;
-
-
-
-		public function borrar($tabla, $camposdatos){
+		public function borrar($tabla, $camposdatos,$ruta){
 			$i=0;
 			foreach($camposdatos as $indice=>$valor) {
+				$field = $indice;
 				$dato[$i] = "'".$valor."'";
 				$i++;
 			}
-			$campoydato = implode(" AND ",$dato);
-			if($this->conexion->query("DELETE FROM $tabla WHERE $campoydato") === TRUE){
+			$campoydato = implode($field." AND ",$dato);
+			echo "DELETE FROM $tabla WHERE $field = $campoydato";
+			if($this->conexion->query("DELETE FROM $tabla WHERE $field = $campoydato") === TRUE){
 				if(mysqli_affected_rows($this->conexion)){
-					echo "Registro eliminado";
+					echo "<script>alert('Evento eliminado correctamente');</script>";
+					echo "Borrado correctamente";
 				} else{
 					echo "Fallo no se pudo eliminar el registro" . $this->conexion->error;
 				}
+				echo "<script>window.location='$ruta';</script>";
+			}else{
+				echo "Nosepudo borrar". $this->conexion->error;
 			}
 		}
 		//$clientesset = array("nombre"=>'Carlos Juan Dolfo', “nombre”=> 'Pedro Dorien Triana', “nombre”=>'Enrique Ordoñez' , “nombre”=> 'Carla Dolores Angeles' );

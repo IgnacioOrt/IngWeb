@@ -109,17 +109,36 @@ body, html {
     <div class="container registro">
         <div class="row">
             <div class="col-md-12">
-                <h2 style="text-align: center;">Agrega tu receta</h2>
+                <h2 style="text-align: center;">Editar receta</h2>
             </div>
         </div>
         <div class="row ingredientes">
             <div class="col-md-12">
+                <?php
+                    $id_receta = $_GET['id_receta'];
+                    require_once 'config.php';
+                    require_once 'conexion.php';
+                    $base = new dbmysqli($hostname,$username,$password,$database);
+                    $id_receta = $_GET['id_receta'];
+                    $sql = "SELECT nombre,preparacion,comentario FROM  receta WHERE id_receta = '$id_receta'";
+                    $result = $base->ExecuteQuery($sql);
+                    if($result){
+                        if ($row=$base->GetRows($result)){
+                            $nombre = $row[0];
+                            $preparacion = $row[1];
+                            $comentario = $row[2];
+                        }
+                        $base->SetFreeResult($result);
+                    }else{
+                        echo "<h3>Error generando la consulta</h3>";
+                    }
+                ?>
                 <form method="POST" action="validaReceta.php" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="nombre">Nombre de la receta</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre"placeholder="Nombre" required>
+                                    <input type="text" class="form-control" name="nombre" id="nombre"placeholder="Nombre" value="<?php echo($nombre)?>" required>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +243,7 @@ body, html {
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="comment">Preparación</label>
-                                    <textarea class="form-control" rows="5" name="preparacion" id="comment" required></textarea>
+                                    <textarea class="form-control" rows="5" name="preparacion" id="comment" required><?php echo($preparacion) ?></textarea>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +251,7 @@ body, html {
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="comment">Comentario</label>
-                                    <textarea class="form-control" rows="5" name="comment" id="comment" required></textarea>
+                                    <textarea class="form-control" rows="5" name="comment" id="comment" required><?php echo($comentario) ?></textarea>
                                 </div>
                             </div>
                         </div>
