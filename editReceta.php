@@ -37,7 +37,7 @@ body, html {
 /* Images used */
 .img1 { background-image: url("img/LeChocolat-DominiqueCrenn.png"); }
 .img2 { background-image: url("img/ColoresDelAmazonas-Virgilio.png"); }
-.img3 { background-image: url("img/CosechaPasachámac-Virgilio.png"); }
+.img3 { background-image: url("img/CosechaPasachamac-Virgilio.png"); }
 .img4 { background-image: url("img/MoleMadre-EnriqueOlvera.png"); }
 
 
