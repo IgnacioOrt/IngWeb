@@ -100,8 +100,11 @@
     	</div>
 	</nav>
     <br><br/>
-    <h1 align="center">¿Quiénes Somos?</h1>
-    <p>En HTML, un título es exactamente lo que parece: un título o un subtitulo real. Cuando pones un texto en una etiqueta <em>h1</em> , El texto será puesto en negrilla, y la dimensión de la letra será igual al número del encabezado. Los títulos pueden tener dimensiones entre 1 y 6 , siendo 1 la mas pequeña y 6 la mas grande.</p>
+    <br><br/>
+    <h1 align="center" style="color:white;">¿Quiénes Somos?</h1>
+    <img alt="team" align="right" src="img/team.png" width="400" height="300" /> 
+    <p align="center" style="color: white;"> Uel Uelik es un proyecto de cultura culinaria cargado de ilusión que crece dia a dia gracias a nuestros usuarios y visitantes.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 
     <script src="dist/jquery/jquery.slim.min.js"></script>
