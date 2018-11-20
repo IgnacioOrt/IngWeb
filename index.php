@@ -112,11 +112,11 @@
                                 <figcaption>Chile en Nogada (MEX) </figcaption>
                             </figure>
                             <figure>
-                                <img src="img/inicio.jpg" alt>
+                                <img src="img/inicio3.jpg" alt>
                                 <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
                             </figure>
                              <figure>
-                                <img src="img/banner.jpg" alt>
+                                <img src="img/inicio4.png" alt>
                                 <figcaption>Utah, United States</figcaption>
                             </figure>
                         </figure>
