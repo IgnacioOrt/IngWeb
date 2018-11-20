@@ -310,3 +310,11 @@ table.steelBlueCols tfoot .links a{
   padding: 2px 8px;
   border-radius: 5px;
 }
+.padtop{
+  padding-top: 100px;
+  color: #fff;
+}
+.row.rowsincon{
+  margin: 0;
+  
+}

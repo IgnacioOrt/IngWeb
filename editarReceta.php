@@ -88,9 +88,6 @@ body, html {
                         <a class="nav-link scroll-link" href="editarReceta.php">Editar receta</a>
                     </li>
             	</ul>
-
-<!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
-            	
             	<span class="ml-auto navbar-nav">
             		<li class="nav-item dropdown">
             			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -106,72 +103,37 @@ body, html {
             			</div>
             		</li>
             	</span>
-            	<!-- <ul class="nav navbar-nav navbar-right">
-        <li><p class="navbar-text">Already have an account?</p></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-			<ul id="login-dp" class="dropdown-menu">
-				<li>
-					 <div class="row">
-							<div class="col-md-12">
-								Iniciar sesión
-								<form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-    										<div class="form-group">
-    											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    											 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-    										</div>
-    										<div class="form-group">
-    											 <label class="sr-only" for="exampleInputPassword2">Password</label>
-    											 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-    										</div>
-    										<div class="form-group">
-    											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-    										</div>
-    								 </form>
-							</div>
-							<div class="bottom text-center">
-								New here ? <a href="#"><b>Join Us</b></a>
-							</div>
-					 </div>
-				</li>
-			</ul>
-        </li>
-      </ul> -->
         	</div>
     	</div>
 	</nav>
 
-        <div class="bg-image img1"> <br> <br>
-            <?php
-                            $link=mysqli_connect("localhost", "hugo", "aioris12345");
-                            mysqli_select_db($link, "ueluelik");
-
-                            $result = mysqli_query($link, "select * from receta");
-                            echo("<div>");
-                            echo "<table class='steelBlueCols'>";
-                            echo ("<tr><td> ID </td><td> Nombre </td><td> Preparación </td></tr>");
-
-
-                            while($row= mysqli_fetch_array($result))
-                            {
-                                $id = $row["id_receta"];
-                                $nom = $row["nombre"];
-                                $pre = $row["preparacion"];
-
-                                echo ("<tr><td> $id </td><td> $nom </td><td> $pre</td></tr>");
-
-                            }
-
-                            echo ("</table>");
-                            echo("</div>");
-
-                            mysqli_free_result($result);
-                            mysqli_close($link);
-                            //update pelicula set imagen=('/imagen6.jpg') where id_pelicula=6;
-                ?>
-
-                            
-            </div>
+  <div class="bg-image img1 padtop">
+    <div class="row rowsincon">
+      <div class="col-md-12">
+        <h3>Mis recetas</h3>
+        <?php
+          require_once 'config.php';
+          require_once 'conexion.php';
+          $base = new dbmysqli($hostname,$username,$password,$database);
+          $query="SELECT id_noticia, titulo, descripcion FROM noticia";
+          $result = $base->ExecuteQuery($query);
+          if($result){
+            while ($row=$base->GetRows($result)){
+              $id_noticia  = $row[0];
+              $titulo = $row[1];
+              $descripcion = $row[2];
+              ?>
+              <a class="enlace-noticia" href="verNoticia.php?id_noticia=<?php echo ($id_noticia) ?>"><?php echo ($row['1']) ?></a><br>
+              <?php
+            }
+            $base->SetFreeResult($result);
+          }else{
+            echo "<h3>Error generando la consulta</h3>";
+          }
+        ?>
+      </div>
+    </div>
+  </div>
 
 	<script src="dist/jquery/jquery.slim.min.js"></script>
 	<script src="dist/js/bootstrap.min.js"></script>
@@ -199,6 +161,20 @@ body, html {
             document.getElementById(id).remove();
             num_ingredientes--;
         }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+    $('a[data-confirm]').click(function(ev) {
+        var href = $(this).attr('href');
+        if (!$('#dataConfirmModal').length) {
+            $('body').append('<div id="dataConfirmModal" class="modal" role="dialog" aria-labelledby="dataConfirmLabel" aria-hidden="true"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 id="dataConfirmLabel">Please Confirm</h3></div><div class="modal-body"></div><div class="modal-footer"><button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button><a class="btn btn-primary" id="dataConfirmOK">OK</a></div></div>');
+        } 
+        $('#dataConfirmModal').find('.modal-body').text($(this).attr('data-confirm'));
+        $('#dataConfirmOK').attr('href', href);
+        $('#dataConfirmModal').modal({show:true});
+        return false;
+    });
+});
     </script>
 </body>
 </html>
