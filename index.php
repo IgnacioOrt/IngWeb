@@ -141,7 +141,7 @@
 
     
 
-<div class="w3-content" style="max-width:1200px">
+
     <div id="captioned-gallery">
             <figure class="slider">
        
@@ -156,23 +156,23 @@
                 </figure>
 
                 <figure>
-                    <img class="mySlides" src="img/inicio3.jpg" style="width:100%">
-                    <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
+                    <img class="mySlides" src="img/¿QuienmatóalCordero_-Gaggan.png" style="width:100%">
+                    <figcaption>¿Quien Mató al Cordero? - Gaggan Anand (IND) </figcaption>
                 </figure>
 
                 <figure>
                     <img class="mySlides" src="img/inicio4.jpg" style="width:100%">
                     <figcaption>Siete Fuegos - Francis Mallmann (ARG) </figcaption>
                 </figure>
-
+                
                 <figure>
-                    <img class="mySlides" src="img/inicio5.jpg" style="width:100%">
-                    <figcaption>Bola de Nieve de Mango - Gaggan Anand (IND) </figcaption>
+                    <img class="mySlides" src="img/inicio3.jpg" style="width:100%">
+                    <figcaption>Mi Cosecha - Dan Barber (USA) </figcaption>
                 </figure>
+                
             </figure>
     </div>
 
-</div>
 
 
 
