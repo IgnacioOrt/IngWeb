@@ -15,6 +15,8 @@ CREATE TABLE usuario(
 	#pais varchar(20) NOT NULL
 );
 
+INSERT INTO usuario ( nombre,username,correo,password,tipo)  VALUES('Goreti Romero Ochoa','goretti','gorettiocho@gmail.com',MD5('1234'),1);
+
 DROP TABLE IF EXISTS receta;
 CREATE TABLE receta(
 	id_receta INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

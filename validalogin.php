@@ -26,7 +26,7 @@
 				echo ("<br>".$_SESSION['id_usuario']);
 				echo ("<br>".$_SESSION['tipo']);
 				echo "Las contraseñas coinciden";
-				if($row[5]==0)
+				if($row[5]==2)
 				{
 					header("Location:indexAdmin.php");
 				}

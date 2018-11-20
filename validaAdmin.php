@@ -19,7 +19,7 @@
 		echo "Las contraseñas no coinciden";
 		$password = md5($pass1);
 	}
-	$usuario = array("nombre"=>"$nombre", "username"=> "$usuario", "correo"=>"$mail" , "password"=> "$password", "tipo" => 1);
+	$usuario = array("nombre"=>"$nombre", "username"=> "$usuario", "correo"=>"$mail" , "password"=> "$password", "tipo" => 2);
 	$base -> insertaUsuario("usuario",$usuario);
 	$_SESSION['username']=$usuario;
 	$query="SELECT* FROM usuario WHERE correo = '$mail'";
@@ -30,7 +30,7 @@
 				$_SESSION['id_usuario']=$row[0];
 				echo ("<br>".$_SESSION['username']);
 				echo ("<br>".$_SESSION['id_usuario']);
-				header("Location:indexU.php");
+				header("Location:indexAdmin.php");
 		}
 		$base->SetFreeResult($result);
 	}else{

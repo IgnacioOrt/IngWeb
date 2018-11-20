@@ -76,6 +76,9 @@ body, html {
 	                <li class="nav-item">
                     	<a class="nav-link scroll-link" href="modificarInfo.php">Modificar Información</a>
                 	</li>
+                  <li class="nav-item">
+                      <a class="nav-link scroll-link" href="agregaAdmin.php">Agregar administrador</a>
+                  </li>
             	</ul>
 
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
