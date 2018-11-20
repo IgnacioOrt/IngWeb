@@ -24,20 +24,14 @@
         	<div class="collapse navbar-collapse" id="navbarNav">
 	            <ul class="navbar-nav">
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="consulta.php">Consulta de receta</a>
+	                    <a class="nav-link scroll-link" href="publicacion.php">Realizar Publicación</a>
                 	</li>
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="noticias.php">Noticias</a>
+	                    <a class="nav-link scroll-link" href="rango.php">Asignar Rango</a>
                 	</li>
 	                <li class="nav-item">
-                    	<a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
+                    	<a class="nav-link scroll-link" href="modificarInfo.php">Modificar Información</a>
                 	</li>
-                	<li class="nav-item">
-                        <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="editarReceta.php">Editar receta</a>
-                    </li>
             	</ul>
 
 <!--https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form-->
