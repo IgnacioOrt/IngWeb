@@ -71,13 +71,13 @@ body, html {
         	<div class="collapse navbar-collapse" id="navbarNav">
 	            <ul class="navbar-nav">
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="consulta.php">Consulta de receta</a>
+	                    <a class="nav-link scroll-link" href="consultaU.php">Consulta de receta</a>
                 	</li>
                 	<li class="nav-item">
-	                    <a class="nav-link scroll-link" href="noticias.php">Noticias</a>
+	                    <a class="nav-link scroll-link" href="noticiasU.php">Noticias</a>
                 	</li>
 	                <li class="nav-item">
-                    	<a class="nav-link scroll-link" href="acerca.php">Acerca de</a>
+                    	<a class="nav-link scroll-link" href="acercaU.php">Acerca de</a>
                 	</li>
                 	<li class="nav-item">
                         <a class="nav-link scroll-link" href="crearReceta.php">Crear receta</a>

@@ -17,7 +17,7 @@
 	<!-- Top menu -->
 	<nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
     	<div class="container">
-	        <a class="navbar-brand" href="index.php">UEL UELIK</a>
+	        <a class="navbar-brand" href="indexU.php">UEL UELIK</a>
         	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 	            <span class="navbar-toggler-icon"></span>
         	</button>
